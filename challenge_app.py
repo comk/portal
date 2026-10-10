@@ -2,7 +2,8 @@
 """挑战答题应用（wxPython）
 
 功能说明：
-1. 首页 4 个挑战入口按钮：数学 / 语文 / 英语 / 科学。
+1. 首页 5 个挑战入口按钮：数学 / 语文 / 英语 / 科学 / 综合。
+   综合挑战从 4 张表各取 5 题（共 20 题）随机组卷。
 2. 点击按钮后旧页面销毁、进入对应挑战页，并向本地日志文件追加一条
    点击记录（点击时间 + 点击类型）。
 3. 题型全部为选择题，每次从 sqlite 库对应表中随机抽取 20 题
@@ -76,6 +77,10 @@ CHALLENGES = [
     ("英语挑战", "tbl_english"),
     ("科学挑战", "tbl_science"),
 ]
+
+# 综合挑战：从 4 张表各取 QUESTION_COUNT // 4 道题，共 QUESTION_COUNT 道
+MIXED_TABLE = "mixed"
+MIXED_LABEL = "综合挑战"
 
 REWARD_OPTIONS = ["选项1", "选项2", "选项3", "选项4"]
 
@@ -179,11 +184,41 @@ def fetch_questions(table):
             questions.append(
                 {
                     "id": qid,
+                    "table": table,
                     "question": question,
                     "answer": options[0],
                     "options": random.sample(options, k=len(options)),
                 }
             )
+    return questions
+
+
+def fetch_mixed_questions():
+    """综合挑战：从 4 张表各取 QUESTION_COUNT // 4 道题，合并后随机排序。"""
+    per_table = max(QUESTION_COUNT // len(CHALLENGES), 1)
+    sql = (
+        f"SELECT id, question, option FROM {{}} "
+        f"WHERE continue_pass_count < ? ORDER BY RANDOM() LIMIT ?"
+    )
+    questions = []
+    with sqlite3.connect(DB_PATH) as conn:
+        for _, table in CHALLENGES:
+            for qid, question, option in conn.execute(
+                sql.format(table), (PASS_LIMIT, per_table)
+            ):
+                options = [o.strip() for o in str(option).replace("；", ";").split(";") if o.strip()]
+                if len(options) < 2:
+                    continue
+                questions.append(
+                    {
+                        "id": qid,
+                        "table": table,
+                        "question": question,
+                        "answer": options[0],
+                        "options": random.sample(options, k=len(options)),
+                    }
+                )
+    random.shuffle(questions)
     return questions
 
 
@@ -326,7 +361,7 @@ class RoundPlayButton(wx.Panel):
 
 # ----------------------------- 页面 -----------------------------
 class StartPanel(wx.Panel):
-    """首页：4 个挑战入口按钮。"""
+    """首页：5 个挑战入口按钮（数学/语文/英语/科学/综合）。"""
 
     def __init__(self, parent):
         super().__init__(parent)
@@ -335,8 +370,9 @@ class StartPanel(wx.Panel):
         _title_font(title, 8)
         sizer.Add(title, 0, wx.ALIGN_CENTER | wx.TOP, 50)
 
-        grid = wx.GridSizer(2, 2, 20, 20)
-        for label, table in CHALLENGES:
+        entries = CHALLENGES + [(MIXED_LABEL, MIXED_TABLE)]
+        grid = wx.GridSizer(3, 2, 20, 20)
+        for label, table in entries:
             btn = wx.Button(self, label=label)
             btn.SetMinSize((180, 70))
             btn.Bind(wx.EVT_BUTTON, lambda evt, l=label, t=table: self.GetParent().show_challenge(l, t))
@@ -351,8 +387,9 @@ class ChallengePanel(wx.Panel):
     def __init__(self, parent, label, table):
         super().__init__(parent)
         self.label = label
-        self.table = table
-        self.questions = fetch_questions(table)
+        self.questions = (
+            fetch_mixed_questions() if table == MIXED_TABLE else fetch_questions(table)
+        )
         self.index = 0
         self.records = []   # 每题: {question, chosen, answer, correct}
         self.option_btns = []
@@ -411,20 +448,20 @@ class ChallengePanel(wx.Panel):
             btn.Destroy()
         self.option_play_btns = []
 
-        # 英语挑战：在题目文本旁加播放按钮
-        if self.table == "tbl_english":
+        # 英语题：在题目文本旁加播放按钮
+        if q["table"] == "tbl_english":
             self.question_play_btn = RoundPlayButton(self, q["question"], size=40)
             self.question_row.Add(self.question_play_btn, 0, wx.LEFT | wx.ALIGN_CENTER_VERTICAL, 10)
 
         for i, text in enumerate(q["options"]):
             row = wx.BoxSizer(wx.HORIZONTAL)
             rb = wx.RadioButton(self, label=text, style=wx.RB_GROUP if i == 0 else 0)
-            # 英语挑战：选项被选中时自动播放
-            if self.table == "tbl_english":
+            # 英语题：选项被选中时自动播放
+            if q["table"] == "tbl_english":
                 rb.Bind(wx.EVT_RADIOBUTTON, lambda evt, t=text: speak_text(t))
             row.Add(rb, 0, wx.ALIGN_CENTER_VERTICAL)
-            # 英语挑战：选项旁加播放按钮
-            if self.table == "tbl_english":
+            # 英语题：选项旁加播放按钮
+            if q["table"] == "tbl_english":
                 play_btn = RoundPlayButton(self, text, size=36)
                 row.Add(play_btn, 0, wx.LEFT | wx.ALIGN_CENTER_VERTICAL, 8)
                 self.option_play_btns.append(play_btn)
@@ -434,8 +471,8 @@ class ChallengePanel(wx.Panel):
         self.next_btn.SetLabel("交卷" if self.index == len(self.questions) - 1 else "下一题")
         self.Layout()
 
-        # 英语挑战：进入题目后自动播放题目
-        if self.table == "tbl_english":
+        # 英语题：进入题目后自动播放题目
+        if q["table"] == "tbl_english":
             speak_text(q["question"])
 
     def on_next(self, event):
@@ -458,7 +495,7 @@ class ChallengePanel(wx.Panel):
         self.records.append(
             {"question": q["question"], "chosen": selected, "answer": q["answer"], "correct": is_correct}
         )
-        update_question_stats(self.table, q["id"], is_correct)
+        update_question_stats(q["table"], q["id"], is_correct)
 
         self.index += 1
         if self.index < len(self.questions):
