@@ -1,0 +1,854 @@
+@可数名词单复数@@I have two _ .@@books；book；bookes；bookies@@book 是可数名词，复数一般直接在词尾加 s，因此 two 后要用 books。@
+@名词复数规则（s/x/ch/sh/o）@@There are three _ in the box.@@boxes；boxs；boxen；box@@box 以 x 结尾，复数要加 es，所以是 boxes。@
+@名词复数规则（辅音字母+y）@@The city has many _ .@@cities；citys；cityes；city@@city 以辅音字母加 y 结尾，变 y 为 i 再加 es，所以是 cities。@
+@名词复数规则（元音字母+y）@@I know two _ .@@boys；boies；boyes；boy@@boy 以元音字母 o 加 y 结尾，复数直接加 s，所以是 boys。@
+@名词复数规则（f/fe）@@There are five _ on the table.@@knives；knifes；knifees；knifs@@knife 以 fe 结尾，复数通常变 fe 为 v 再加 es，所以是 knives。@
+@不规则名词复数@@Two _ are playing football.@@men；mans；mens；man@@man 的复数是不规则变化 men，不能加 s。@
+@不规则名词复数@@There are three _ in the room.@@women；womans；womens；woman@@woman 的复数是不规则变化 women，不能写成 womans。@
+@不规则名词复数@@The _ are singing.@@children；childs；childrens；child@@child 的复数是不规则变化 children，不能再加 s。@
+@不规则名词复数@@My _ hurt after the long walk.@@feet；foots；footes；foot@@foot 的复数是不规则变化 feet，表示双脚。@
+@不规则名词复数@@Brush your _ twice a day.@@teeth；tooths；toothes；tooth@@tooth 的复数是不规则变化 teeth，表示牙齿。@
+@不规则名词复数@@The cat caught two _ .@@mice；mouses；micees；mouse@@mouse 的复数是不规则变化 mice。@
+@单复数同形@@I see ten _ on the farm.@@sheep；sheeps；sheepes；sheepies@@sheep 的复数与单数同形，不加 s。@
+@单复数同形@@There are many _ in the river.@@fish；fishes；fishs；fishies@@fish 表示同一种鱼时复数常与单数同形，many fish 是正确的。@
+@单复数同形@@We saw two _ in the zoo.@@deer；deers；deeres；deeries@@deer 的复数与单数同形，不加 s。@
+@单复数同形@@They are _ .@@Chinese；Chineses；Chinians；China@@Chinese 表示中国人时单复数同形，首字母要大写。@
+@单复数同形@@They are _ .@@Japanese；Japaneses；Japanians；Japan@@Japanese 表示日本人时单复数同形，首字母要大写。@
+@不可数名词@@I drink some _ every day.@@water；waters；a water；wateres@@water 是不可数名词，不能加 s，也不能用 a 修饰。@
+@不可数名词@@There is some _ in the glass.@@milk；milks；a milk；milkies@@milk 是不可数名词，没有复数形式，也不能用 a 直接修饰。@
+@不可数名词@@I eat _ for breakfast.@@bread；breads；a bread；breades@@bread 是不可数名词，不能加 s，也不能说 a bread。@
+@不可数名词@@We have _ for lunch.@@rice；rices；a rice；ricees@@rice 是不可数名词，通常不加 s，也不能用 a 直接修饰。@
+@不可数名词@@She likes _ .@@meat；meats；a meat；meates@@meat 是不可数名词，通常不加 s，也不能用 a 直接修饰。@
+@不可数名词@@Would you like some _ ?@@juice；juices；a juice；juicees@@juice 作饮料时通常不可数，用 some 修饰，不加 s。@
+@不可数名词@@He drinks _ every morning.@@tea；teas；a tea；teaes@@tea 作饮料时通常不可数，不加 s，也不能说 a tea。@
+@不可数名词@@I want a cup of _ .@@coffee；coffees；a coffee；coffeees@@coffee 作饮料时通常不可数，用 a cup of coffee 表示一杯咖啡。@
+@不可数名词@@Please give me some _ .@@paper；papers；a paper；paperes@@paper 作“纸”时不可数，不加 s；papers 常指论文或报纸。@
+@不可数名词@@The teacher writes with _ .@@chalk；chalks；a chalk；chalkes@@chalk 作“粉笔”材料时不可数，通常不加 s。@
+@不可数名词@@I don't have much _ .@@money；moneys；a money；moneyes@@money 是不可数名词，不能用 many 或 a 修饰，要用 much。@
+@可数名词与 many@@How many _ do you have?@@books；book；much book；water@@how many 后接可数名词复数，books 是正确的。@
+@不可数名词与 much@@How much _ do you want?@@water；waters；a water；apples@@how much 后接不可数名词，water 是正确的。@
+@some/any@@I have _ apples.@@some；any；much；a@@some 常用于肯定句，后接可数名词复数 apples。@
+@some/any@@Do you have _ books?@@any；some；much；a@@any 常用于疑问句和否定句，后接可数名词复数 books。@
+@冠词 a/an@@This is _ apple.@@an；a；some；much@@apple 以元音音素开头，单数可数名词前用 an。@
+@冠词 a/an@@She is _ teacher.@@a；an；some；many@@teacher 以辅音音素开头，单数可数名词前用 a。@
+@a few/a little@@There are _ eggs in the basket.@@a few；a little；much；any@@a few 后接可数名词复数 eggs，表示“几个”。@
+@a few/a little@@There is _ milk in the cup.@@a little；a few；many；an@@a little 后接不可数名词 milk，表示“一点”。@
+@a lot of@@There are _ students in the classroom.@@a lot of；much；a little；an@@a lot of 可修饰可数名词复数，students 是正确的。@
+@a lot of@@There is _ water in the bottle.@@a lot of；many；a few；an@@a lot of 也可修饰不可数名词 water。@
+@名词所有格单数@@This is _ bag.@@Tom's；Tom；Toms；Toms'@@表示 Tom 的书包，单数名词后加 's，所以是 Tom's。@
+@名词所有格复数@@This is the _ classroom.@@students'；student's；students；students's@@students 是复数且以 s 结尾，所有格只加 '，所以是 students'。@
+@名词所有格不规则复数@@This is the _ room.@@children's；childrens；childrens'；children@@children 是不规则复数，不以 s 结尾，所有格加 's，所以是 children's。@
+@名词所有格共同拥有@@This is _ house.@@Lucy and Lily's；Lucy's and Lily's；Lucy and Lily；Lucy's and Lily@@两人共同拥有，只在最后一个名字后加 's。@
+@名词所有格各自拥有@@These are _ bags.@@Lucy's and Lily's；Lucy and Lily's；Lucy and Lily；Lucy's and Lily@@表示各自拥有，每个名字后都要加 's。@
+@of 所有格@@The door _ the room is open.@@of；'s；s；for@@无生命名词常用 of 所有格，the door of the room 表示“房间的门”。@
+@专有名词大写@@I live in _ .@@Beijing；beijing；bei jing；BeiJing@@Beijing 是专有名词，首字母必须大写。@
+@普通名词@@Which word is a common noun?@@school；Tom；Beijing；Monday@@school 是普通名词；Tom、Beijing、Monday 都是专有名词。@
+@集体名词@@My family _ a big family.@@is；are；am；be@@family 作整体“家庭”时视为单数，be 动词用 is。@
+@集体名词@@My family _ all at home.@@are；is；am；be@@family 强调家庭成员时视为复数，be 动词用 are。@
+@名词作主语@@_ are cute.@@Pandas；Panda；A panda；Pandaes@@Pandas 作主语，复数与 are 搭配。@
+@名词作宾语@@I like _ .@@bananas；banana；a banana；bananaes@@like 后接名词作宾语，泛指喜欢香蕉用复数 bananas。@
+@名词作表语@@She is a _ .@@doctor；doctors；doctor's；doctor es@@be 动词后名词作表语，单数可数名词前用 a doctor。@
+@名词作定语@@I see many _ trees.@@apple；apples；apple's；apples'@@名词作定语修饰另一个名词时，通常用单数 apple trees。@
+@名词作定语@@There are two _ teachers.@@women；woman；womans；womens@@man/woman 作定语修饰复数名词时，通常也要变复数 women teachers。@
+@性别名词@@My _ is a boy.@@brother；sister；mother；aunt@@brother 是男性家庭成员，与 boy 对应。@
+@性别名词@@My _ is a girl.@@sister；brother；father；uncle@@sister 是女性家庭成员，与 girl 对应。@
+@性别名词@@The _ is a woman.@@queen；king；prince；father@@queen 是女性君主，与 woman 对应。@
+@职业名词@@The _ brings us food.@@waiter；waitress；doctor；driver@@waiter 是男服务员，可在泛指服务员时使用。@
+@职业名词@@My aunt is a _ .@@nurse；nurses；nurse's；nursing@@a 后接单数可数名词 nurse。@
+@动物名词@@A _ can fly.@@bird；dog；cat；fish@@bird 是会飞的动物，符合句意。@
+@地点名词@@We study in a _ .@@school；park；shop；zoo@@school 是学习的地方，符合句意。@
+@食物名词@@I eat _ for breakfast.@@eggs；egg；an egg；egg's@@泛指早餐吃鸡蛋，可数名词用复数 eggs。@
+@饮料名词@@I would like some _ .@@orange juice；orange juices；an orange juice；orange juice's@@orange juice 是饮料，不可数，用 some 修饰。@
+@服装名词@@These _ are new.@@shoes；shoe；shoes'；shoe's@@shoes 通常用复数，与 These are 搭配。@
+@交通工具@@I go to school by _ .@@bus；a bus；buses；bus's@@by bus 是固定搭配，名词用单数。@
+@学科名词@@_ is my favourite subject.@@English；english；Englishes；an English@@English 是专有名词，首字母大写，作主语视为单数。@
+@身体部位@@I have two _ .@@hands；hand；handes；hand's@@two 后接可数名词复数 hands。@
+@家庭称谓@@My father's brother is my _ .@@uncle；aunt；cousin；brother@@父亲的兄弟是 uncle。@
+@国家/国籍@@He is from _ .@@China；Chinese；Chinas；china@@China 是国家名，首字母要大写。@
+@国家/国籍@@She is _ .@@Chinese；China；Chineses；Chinians@@Chinese 表示中国人的，单复数同形，首字母大写。@
+@星期/月份@@_ is the day after Monday.@@Tuesday；tuesday；Tuesdays；a Tuesday@@Tuesday 是星期二，专有名词首字母大写。@
+@节日@@_ is on January 1st.@@New Year's Day；new year's day；New Years Day；new year day@@节日专有名词首字母要大写，New Year's Day 是正确的。@
+@可数名词单数@@There is _ on the desk.@@a pen；pens；pen；some pens@@there is 后接单数可数名词，a pen 正确。@
+@可数名词复数@@There are _ on the desk.@@pens；a pen；pen；some pen@@there are 后接可数名词复数 pens。@
+@this/these@@_ books are mine.@@These；This；That；It@@books 是复数，指示代词用 These。@
+@that/those@@_ apples are red.@@Those；That；This；It@@apples 是复数，指示代词用 Those。@
+@there is/are@@There _ a book on the table.@@is；are；am；be@@a book 是单数，there is 正确。@
+@there is/are@@There _ some books on the table.@@are；is；am；be@@some books 是复数，there are 正确。@
+@名词复数 o 结尾@@I like _ .@@tomatoes；tomatos；tomato；tomato's@@tomato 以 o 结尾且有生命，复数加 es，所以是 tomatoes。@
+@名词复数 o 结尾@@I take two _ .@@photos；photoes；photo；photo's@@photo 以 o 结尾但常直接加 s，所以是 photos。@
+@名词复数 ch@@There are three _ in the kitchen.@@watches；watchs；watch；watch'es@@watch 以 ch 结尾，复数加 es，所以是 watches。@
+@名词复数 sh@@She washes two _ .@@dishes；dishs；dish；dish'es@@dish 以 sh 结尾，复数加 es，所以是 dishes。@
+@名词复数 x@@The fox has two _ .@@foxes；foxs；fox；fox's@@fox 以 x 结尾，复数加 es，所以是 foxes。@
+@名词复数 s@@There are two _ in the street.@@buses；buss；bus；bus's@@bus 以 s 结尾，复数加 es，所以是 buses。@
+@不可数名词无复数@@I need some _ .@@bread；breads；a bread；breades@@bread 是不可数名词，没有复数形式。@
+@不可数名词不能用 a/an@@I want _ water.@@some；a；an；many@@water 不可数，不能用 a/an，要用 some。@
+@不可数名词量词@@I want a glass of _ .@@milk；milks；a milk；milk's@@不可数名词可用 a glass of + 名词，milk 不加 s。@
+@可数名词量词@@I want a pair of _ .@@shoes；shoe；shoes'；shoe's@@a pair of 后接复数名词 shoes，表示“一双鞋”。@
+@复数名词主语@@_ are playing in the park.@@Children；Child；A child；Childs@@Children 是复数主语，与 are 搭配。@
+@单数名词主语@@_ is my friend.@@The boy；The boys；Boys；A boys@@The boy 是单数主语，与 is 搭配。@
+@不可数名词主语@@_ is good for us.@@Milk；Milks；A milk；Milk's@@Milk 是不可数名词作主语，视为单数，用 is。@
+@名词所有格意义@@This is _ bike.@@Lily's；Lily；Lilys；Lilys'@@Lily 的所有格是 Lily's，表示“莉莉的”。@
+@名词所有格复数@@These are _ books.@@the students'；the student's；the students；the students's@@the students 是复数且以 s 结尾，所有格加 '。@
+@名词所有格不规则@@This is _ toy.@@the child's；the children；the child；the childrens@@单数 child 的所有格是 the child's，表示“这个孩子的”。@
+@of 所有格@@The name _ the book is fun.@@of；'s；s；for@@无生命名词 book 常用 of 所有格，the name of the book。@
+@名词单复数综合@@There are many _ in the tree.@@leaves；leafs；leafes；leaf@@leaf 以 f 结尾，复数变 f 为 v 再加 es，所以是 leaves。@
+@名词单复数综合@@I see two _ .@@knives；knifes；knife；knife's@@knife 以 fe 结尾，复数变 fe 为 v 再加 es，所以是 knives。@
+@名词单复数综合@@The _ are white.@@sheep；sheeps；sheepes；sheep's@@sheep 单复数同形，与 are 搭配。@
+@名词单复数综合@@Those _ are old.@@men；man；mans；mens@@man 的复数是 men。@
+@名词单复数综合@@The _ are in the classroom.@@children；child；childs；childrens@@child 的复数是 children。@
+@名词单复数综合@@I brush my _ every morning.@@teeth；tooth；tooths；toothes@@tooth 的复数是 teeth。@
+@名词综合@@There _ some milk and two apples on the table.@@is；are；am；be@@there be 遵循就近原则，some milk 是不可数名词，be 动词用 is。@
+@动词单复数@@He _ apples every day.@@likes；like；liked；liking@@一般现在时中，主语 he 是第三人称单数，动词 like 要加 -s 变成 likes。@
+@动词单复数@@She _ to school on foot.@@goes；go；went；going@@一般现在时中，主语 she 是第三人称单数，go 的第三人称单数形式是 goes。@
+@动词单复数@@Tom _ TV after dinner.@@watches；watch；watched；watching@@一般现在时中，主语 Tom 是第三人称单数，watch 以 ch 结尾，加 -es 变成 watches。@
+@动词单复数@@My mother _ dinner every evening.@@cooks；cook；cooked；cooking@@一般现在时中，主语 My mother 是第三人称单数，动词 cook 加 -s 变成 cooks。@
+@动词单复数@@The cat _ fish.@@likes；like；liked；liking@@一般现在时中，主语 The cat 是第三人称单数，like 加 -s 变成 likes。@
+@动词单复数@@Jack _ his homework at home.@@does；do；did；doing@@一般现在时中，主语 Jack 是第三人称单数，do 的第三人称单数形式是 does。@
+@动词单复数@@Lily _ English every morning.@@studies；study；studied；studying@@一般现在时中，主语 Lily 是第三人称单数，study 变 y 为 i 再加 -es，变成 studies。@
+@动词单复数@@The bird _ in the sky.@@flies；fly；flew；flying@@一般现在时中，主语 The bird 是第三人称单数，fly 变 y 为 i 再加 -es，变成 flies。@
+@动词单复数@@My father _ to work by car.@@goes；go；went；going@@一般现在时中，主语 My father 是第三人称单数，go 加 -es 变成 goes。@
+@动词单复数@@She _ her face every morning.@@washes；wash；washed；washing@@一般现在时中，主语 She 是第三人称单数，wash 以 sh 结尾，加 -es 变成 washes。@
+@动词单复数@@He _ football on Sundays.@@plays；play；played；playing@@一般现在时中，主语 He 是第三人称单数，play 加 -s 变成 plays。@
+@动词单复数@@The dog _ after the ball.@@runs；run；ran；running@@一般现在时中，主语 The dog 是第三人称单数，run 加 -s 变成 runs。@
+@动词单复数@@Mary _ books in the evening.@@reads；read；readed；reading@@一般现在时中，主语 Mary 是第三人称单数，read 加 -s 变成 reads。@
+@动词单复数@@My sister _ to music after school.@@listens；listen；listened；listening@@一般现在时中，主语 My sister 是第三人称单数，listen 加 -s 变成 listens。@
+@动词单复数@@The boy _ his teeth twice a day.@@brushes；brush；brushed；brushing@@一般现在时中，主语 The boy 是第三人称单数，brush 以 sh 结尾，加 -es 变成 brushes。@
+@动词单复数@@It _ a lot in summer here.@@rains；rain；rained；raining@@一般现在时中，主语 It 是第三人称单数，rain 加 -s 变成 rains。@
+@动词单复数@@Lucy _ her room every Saturday.@@cleans；clean；cleaned；cleaning@@一般现在时中，主语 Lucy 是第三人称单数，clean 加 -s 变成 cleans。@
+@动词单复数@@The teacher _ us English.@@teaches；teach；taught；teaching@@一般现在时中，主语 The teacher 是第三人称单数，teach 以 ch 结尾，加 -es 变成 teaches。@
+@动词单复数@@He _ his grandparents on Sundays.@@visits；visit；visited；visiting@@一般现在时中，主语 He 是第三人称单数，visit 加 -s 变成 visits。@
+@动词单复数@@The panda _ bamboo.@@eats；eat；ate；eating@@一般现在时中，主语 The panda 是第三人称单数，eat 加 -s 变成 eats。@
+@动词单复数@@My cousin _ in Beijing.@@lives；live；lived；living@@一般现在时中，主语 My cousin 是第三人称单数，live 加 -s 变成 lives。@
+@动词单复数@@She _ her bike to school.@@rides；ride；rode；riding@@一般现在时中，主语 She 是第三人称单数，ride 加 -s 变成 rides。@
+@动词单复数@@The baby _ when he is hungry.@@cries；cry；cried；crying@@一般现在时中，主语 The baby 是第三人称单数，cry 变 y 为 i 再加 -es，变成 cries。@
+@动词单复数@@Peter _ swimming very much.@@likes；like；liked；liking@@一般现在时中，主语 Peter 是第三人称单数，like 加 -s 变成 likes。@
+@动词单复数@@The shop _ at eight every day.@@opens；open；opened；opening@@一般现在时中，主语 The shop 是第三人称单数，open 加 -s 变成 opens。@
+@动词单复数@@My uncle _ a bus.@@drives；drive；drove；driving@@一般现在时中，主语 My uncle 是第三人称单数，drive 加 -s 变成 drives。@
+@动词单复数@@The girl _ a beautiful song.@@sings；sing；sang；singing@@一般现在时中，主语 The girl 是第三人称单数，sing 加 -s 变成 sings。@
+@动词单复数@@He _ his hands before lunch.@@washes；wash；washed；washing@@一般现在时中，主语 He 是第三人称单数，wash 加 -es 变成 washes。@
+@动词单复数@@The clock _ at seven.@@rings；ring；rang；ringing@@一般现在时中，主语 The clock 是第三人称单数，ring 加 -s 变成 rings。@
+@动词单复数@@My grandma _ stories to me.@@tells；tell；told；telling@@一般现在时中，主语 My grandma 是第三人称单数，tell 加 -s 变成 tells。@
+@动词单复数@@The student _ hard at school.@@studies；study；studied；studying@@一般现在时中，主语 The student 是第三人称单数，study 变 y 为 i 再加 -es。@
+@动词单复数@@It _ two ears.@@has；have；had；having@@一般现在时中，主语 It 是第三人称单数，have 的第三人称单数形式是 has。@
+@动词单复数@@She _ a red skirt today.@@has；have；had；having@@一般现在时中，主语 She 是第三人称单数，have 变成 has。@
+@动词单复数@@The man _ English well.@@speaks；speak；spoke；speaking@@一般现在时中，主语 The man 是第三人称单数，speak 加 -s 变成 speaks。@
+@动词单复数@@My brother _ his homework after school.@@does；do；did；doing@@一般现在时中，主语 My brother 是第三人称单数，do 变成 does。@
+@动词单复数@@The bus _ at the station.@@stops；stop；stopped；stopping@@一般现在时中，主语 The bus 是第三人称单数，stop 加 -s 变成 stops。@
+@动词单复数@@She _ a book every week.@@reads；read；readed；reading@@一般现在时中，主语 She 是第三人称单数，read 加 -s 变成 reads。@
+@动词单复数@@The little boy _ to be a doctor.@@wants；want；wanted；wanting@@一般现在时中，主语 The little boy 是第三人称单数，want 加 -s 变成 wants。@
+@动词单复数@@My friend _ me with my English.@@helps；help；helped；helping@@一般现在时中，主语 My friend 是第三人称单数，help 加 -s 变成 helps。@
+@动词单复数@@The sun _ in the east.@@rises；rise；rose；rising@@一般现在时中，主语 The sun 是第三人称单数，rise 加 -s 变成 rises。@
+@一般现在时@@I _ English every day.@@study；studies；studied；studying@@一般现在时中，主语 I 不是第三人称单数，动词用原形 study。@
+@一般现在时@@You _ football well.@@play；plays；played；playing@@一般现在时中，主语 You 不是第三人称单数，动词用原形 play。@
+@一般现在时@@We _ to school by bus.@@go；goes；went；going@@一般现在时中，主语 We 不是第三人称单数，动词用原形 go。@
+@一般现在时@@They _ TV every evening.@@watch；watches；watched；watching@@一般现在时中，主语 They 不是第三人称单数，动词用原形 watch。@
+@一般现在时@@The students _ in the classroom.@@read；reads；readed；reading@@一般现在时中，主语 The students 是复数，动词用原形 read。@
+@一般现在时@@My parents _ coffee.@@like；likes；liked；liking@@一般现在时中，主语 My parents 是复数，动词用原形 like。@
+@一般现在时@@The boys _ basketball after school.@@play；plays；played；playing@@一般现在时中，主语 The boys 是复数，动词用原形 play。@
+@一般现在时@@I _ my homework at home.@@do；does；did；doing@@一般现在时中，主语 I 不是第三人称单数，动词用原形 do。@
+@一般现在时@@We _ our room on Sundays.@@clean；cleans；cleaned；cleaning@@一般现在时中，主语 We 不是第三人称单数，动词用原形 clean。@
+@一般现在时@@They _ lunch at school.@@have；has；had；having@@一般现在时中，主语 They 不是第三人称单数，动词用原形 have。@
+@一般现在时@@You _ a nice bag.@@have；has；had；having@@一般现在时中，主语 You 不是第三人称单数，动词用原形 have。@
+@一般现在时@@The children _ in the park.@@run；runs；ran；running@@一般现在时中，主语 The children 是复数，动词用原形 run。@
+@一般现在时@@My friends _ music.@@love；loves；loved；loving@@一般现在时中，主语 My friends 是复数，动词用原形 love。@
+@一般现在时@@I _ to bed at nine.@@go；goes；went；going@@一般现在时中，主语 I 不是第三人称单数，动词用原形 go。@
+@一般现在时@@We _ English songs.@@sing；sings；sang；singing@@一般现在时中，主语 We 不是第三人称单数，动词用原形 sing。@
+@一般现在时@@They _ their teeth every morning.@@brush；brushes；brushed；brushing@@一般现在时中，主语 They 不是第三人称单数，动词用原形 brush。@
+@一般现在时@@The cats _ fish.@@like；likes；liked；liking@@一般现在时中，主语 The cats 是复数，动词用原形 like。@
+@一般现在时@@My sister and I _ TV.@@watch；watches；watched；watching@@一般现在时中，主语 My sister and I 是复数，动词用原形 watch。@
+@一般现在时@@You and Tom _ good friends.@@are；is；am；be@@一般现在时中，主语 You and Tom 是复数，be 动词用 are。@
+@一般现在时@@The books _ on the desk.@@are；is；am；be@@一般现在时中，主语 The books 是复数，be 动词用 are。@
+@一般现在时@@I _ a pupil.@@am；is；are；be@@一般现在时中，主语 I 后面 be 动词用 am。@
+@一般现在时@@He _ a doctor.@@is；am；are；be@@一般现在时中，主语 He 是第三人称单数，be 动词用 is。@
+@一般现在时@@She _ my teacher.@@is；am；are；be@@一般现在时中，主语 She 是第三人称单数，be 动词用 is。@
+@一般现在时@@It _ a cat.@@is；am；are；be@@一般现在时中，主语 It 是第三人称单数，be 动词用 is。@
+@一般现在时@@We _ in the classroom.@@are；is；am；be@@一般现在时中，主语 We 是复数，be 动词用 are。@
+@一般现在时@@ _ he play football every day?@@Does；Do；Is；Did@@一般现在时疑问句中，主语 he 是第三人称单数，助动词用 Does。@
+@一般现在时@@ _ you like apples?@@Do；Does；Are；Did@@一般现在时疑问句中，主语 you 不是第三人称单数，助动词用 Do。@
+@一般现在时@@Tom _ like milk.@@doesn't；don't；isn't；didn't@@一般现在时否定句中，主语 Tom 是第三人称单数，用 doesn't。@
+@一般现在时@@They _ play tennis on Mondays.@@don't；doesn't；isn't；didn't@@一般现在时否定句中，主语 They 不是第三人称单数，用 don't。@
+@一般现在时@@ _ your father go to work by car?@@Does；Do；Is；Did@@一般现在时疑问句中，主语 your father 是第三人称单数，助动词用 Does。@
+@一般过去时@@I _ football yesterday.@@played；play；plays；playing@@一般过去时中，yesterday 表示过去，play 的过去式是 played。@
+@一般过去时@@She _ to the zoo last Sunday.@@went；go；goes；going@@一般过去时中，last Sunday 表示过去，go 的过去式是 went。@
+@一般过去时@@He _ his homework last night.@@did；do；does；doing@@一般过去时中，last night 表示过去，do 的过去式是 did。@
+@一般过去时@@We _ a good time yesterday.@@had；have；has；having@@一般过去时中，yesterday 表示过去，have 的过去式是 had。@
+@一般过去时@@They _ a film last week.@@saw；see；sees；seeing@@一般过去时中，last week 表示过去，see 的过去式是 saw。@
+@一般过去时@@I _ an apple this morning.@@ate；eat；eats；eating@@一般过去时中，this morning 表示过去，eat 的过去式是 ate。@
+@一般过去时@@She _ milk last night.@@drank；drink；drinks；drinking@@一般过去时中，last night 表示过去，drink 的过去式是 drank。@
+@一般过去时@@The boy _ in the park yesterday.@@ran；run；runs；running@@一般过去时中，yesterday 表示过去，run 的过去式是 ran。@
+@一般过去时@@He _ in the river last summer.@@swam；swim；swims；swimming@@一般过去时中，last summer 表示过去，swim 的过去式是 swam。@
+@一般过去时@@I _ a book last night.@@read；reads；reading；readed@@一般过去时中，last night 表示过去，read 的过去式仍拼写为 read，但读音变化。@
+@一般过去时@@She _ a letter to her friend yesterday.@@wrote；write；writes；writing@@一般过去时中，yesterday 表示过去，write 的过去式是 wrote。@
+@一般过去时@@My mother _ a cake last Sunday.@@made；make；makes；making@@一般过去时中，last Sunday 表示过去，make 的过去式是 made。@
+@一般过去时@@He _ a photo of the tree.@@took；take；takes；taking@@一般过去时中，句子表示过去发生，take 的过去式是 took。@
+@一般过去时@@She _ to my party last week.@@came；come；comes；coming@@一般过去时中，last week 表示过去，come 的过去式是 came。@
+@一般过去时@@I _ a present yesterday.@@got；get；gets；getting@@一般过去时中，yesterday 表示过去，get 的过去式是 got。@
+@一般过去时@@He _ me a pen.@@gave；give；gives；giving@@一般过去时中，句子表示过去发生，give 的过去式是 gave。@
+@一般过去时@@She _ a song at the party.@@sang；sing；sings；singing@@一般过去时中，at the party 表示过去，sing 的过去式是 sang。@
+@一般过去时@@We _ on the chairs.@@sat；sit；sits；sitting@@一般过去时中，句子表示过去发生，sit 的过去式是 sat。@
+@一般过去时@@The baby _ well last night.@@slept；sleep；sleeps；sleeping@@一般过去时中，last night 表示过去，sleep 的过去式是 slept。@
+@一般过去时@@He _ to me yesterday.@@spoke；speak；speaks；speaking@@一般过去时中，yesterday 表示过去，speak 的过去式是 spoke。@
+@一般过去时@@She _ me a story.@@told；tell；tells；telling@@一般过去时中，句子表示过去发生，tell 的过去式是 told。@
+@一般过去时@@He _ "hello" to me.@@said；say；says；saying@@一般过去时中，句子表示过去发生，say 的过去式是 said。@
+@一般过去时@@I _ a new book yesterday.@@bought；buy；buys；buying@@一般过去时中，yesterday 表示过去，buy 的过去式是 bought。@
+@一般过去时@@She _ her homework to school.@@brought；bring；brings；bringing@@一般过去时中，句子表示过去发生，bring 的过去式是 brought。@
+@一般过去时@@I _ about it last night.@@thought；think；thinks；thinking@@一般过去时中，last night 表示过去，think 的过去式是 thought。@
+@一般过去时@@He _ us English last year.@@taught；teach；teaches；teaching@@一般过去时中，last year 表示过去，teach 的过去式是 taught。@
+@一般过去时@@The cat _ a mouse.@@caught；catch；catches；catching@@一般过去时中，句子表示过去发生，catch 的过去式是 caught。@
+@一般过去时@@The bird _ away.@@flew；fly；flies；flying@@一般过去时中，句子表示过去发生，fly 的过去式是 flew。@
+@一般过去时@@She _ a picture.@@drew；draw；draws；drawing@@一般过去时中，句子表示过去发生，draw 的过去式是 drew。@
+@一般过去时@@I _ the answer.@@knew；know；knows；knowing@@一般过去时中，句子表示过去发生，know 的过去式是 knew。@
+@一般过去时@@He _ a horse last week.@@rode；ride；rides；riding@@一般过去时中，last week 表示过去，ride 的过去式是 rode。@
+@一般过去时@@My father _ a car.@@drove；drive；drives；driving@@一般过去时中，句子表示过去发生，drive 的过去式是 drove。@
+@一般过去时@@I _ my key.@@found；find；finds；finding@@一般过去时中，句子表示过去发生，find 的过去式是 found。@
+@一般过去时@@She _ her pen.@@lost；lose；loses；losing@@一般过去时中，句子表示过去发生，lose 的过去式是 lost。@
+@一般过去时@@I _ my friend yesterday.@@met；meet；meets；meeting@@一般过去时中，yesterday 表示过去，meet 的过去式是 met。@
+@一般过去时@@He _ the ball.@@put；puts；putting；puted@@一般过去时中，put 的过去式仍是 put。@
+@一般过去时@@She _ the paper.@@cut；cuts；cutting；cutted@@一般过去时中，cut 的过去式仍是 cut。@
+@一般过去时@@The game _ at nine.@@began；begin；begins；beginning@@一般过去时中，句子表示过去发生，begin 的过去式是 began。@
+@一般过去时@@The phone _ .@@rang；ring；rings；ringing@@一般过去时中，句子表示过去发生，ring 的过去式是 rang。@
+@一般过去时@@He _ a new coat.@@wore；wear；wears；wearing@@一般过去时中，句子表示过去发生，wear 的过去式是 wore。@
+@一般过去时@@Our team _ the game.@@won；win；wins；winning@@一般过去时中，句子表示过去发生，win 的过去式是 won。@
+@一般过去时@@I _ TV last night.@@watched；watch；watches；watching@@一般过去时中，last night 表示过去，watch 的过去式是 watched。@
+@一般过去时@@She _ her room yesterday.@@cleaned；clean；cleans；cleaning@@一般过去时中，yesterday 表示过去，clean 的过去式是 cleaned。@
+@一般过去时@@We _ our grandparents last week.@@visited；visit；visits；visiting@@一般过去时中，last week 表示过去，visit 的过去式是 visited。@
+@一般过去时@@He _ to school yesterday.@@walked；walk；walks；walking@@一般过去时中，yesterday 表示过去，walk 的过去式是 walked。@
+@一般过去时@@They _ about the film.@@talked；talk；talks；talking@@一般过去时中，句子表示过去发生，talk 的过去式是 talked。@
+@一般过去时@@My mother _ noodles last night.@@cooked；cook；cooks；cooking@@一般过去时中，last night 表示过去，cook 的过去式是 cooked。@
+@一般过去时@@I _ my clothes yesterday.@@washed；wash；washes；washing@@一般过去时中，yesterday 表示过去，wash 的过去式是 washed。@
+@一般过去时@@She _ at the party.@@danced；dance；dances；dancing@@一般过去时中，句子表示过去发生，dance 的过去式是 danced。@
+@一般过去时@@He _ English last year.@@studied；study；studies；studying@@一般过去时中，last year 表示过去，study 变 y 为 i 再加 -ed，变成 studied。@
+@一般过去时@@The bus _ at the station.@@stopped；stop；stops；stopping@@一般过去时中，句子表示过去发生，stop 双写 p 再加 -ed，变成 stopped。@
+@一般过去时@@She _ the box.@@carried；carry；carries；carrying@@一般过去时中，句子表示过去发生，carry 变 y 为 i 再加 -ed，变成 carried。@
+@一般过去时@@The baby _ .@@cried；cry；cries；crying@@一般过去时中，句子表示过去发生，cry 变 y 为 i 再加 -ed，变成 cried。@
+@一般过去时@@I _ in a big house.@@lived；live；lives；living@@一般过去时中，句子表示过去发生，live 加 -d 变成 lived。@
+@一般过去时@@He _ his bike.@@liked；like；likes；liking@@一般过去时中，句子表示过去发生，like 加 -d 变成 liked。@
+@一般过去时@@ _ you go to the park yesterday?@@Did；Do；Does；Are@@一般过去时疑问句中，yesterday 表示过去，助动词用 Did。@
+@一般过去时@@She _ not come to school yesterday.@@did；does；do；is@@一般过去时否定句中，yesterday 表示过去，用 did not。@
+@一般过去时@@They _ happy last night.@@were；was；are；is@@一般过去时中，主语 They 是复数，be 动词过去式用 were。@
+@一般过去时@@I _ at home yesterday.@@was；were；am；is@@一般过去时中，主语 I 后面 be 动词过去式用 was。@
+@一般过去时@@He _ ill last week.@@was；were；is；am@@一般过去时中，主语 He 是第三人称单数，be 动词过去式用 was。@
+@一般进行时@@Look! The baby _ .@@is sleeping；sleeps；slept；sleep@@现在进行时中，Look! 提示动作正在发生，主语 The baby 是第三人称单数，用 is sleeping。@
+@一般进行时@@Listen! She _ in the room.@@is singing；sings；sang；sing@@现在进行时中，Listen! 提示动作正在发生，主语 She 用 is singing。@
+@一般进行时@@I _ a book now.@@am reading；read；reads；reading@@现在进行时中，now 提示动作正在发生，主语 I 用 am reading。@
+@一般进行时@@We _ TV now.@@are watching；watch；watches；watched@@现在进行时中，now 提示动作正在发生，主语 We 用 are watching。@
+@一般进行时@@They _ football now.@@are playing；play；plays；played@@现在进行时中，now 提示动作正在发生，主语 They 用 are playing。@
+@一般进行时@@He _ his homework now.@@is doing；does；did；do@@现在进行时中，now 提示动作正在发生，主语 He 用 is doing。@
+@一般进行时@@She _ dinner now.@@is cooking；cooks；cooked；cook@@现在进行时中，now 提示动作正在发生，主语 She 用 is cooking。@
+@一般进行时@@The cat _ under the tree.@@is running；runs；ran；run@@现在进行时中，句子表示动作正在发生，主语 The cat 用 is running，run 双写 n 再加 -ing。@
+@一般进行时@@The children _ in the pool.@@are swimming；swim；swims；swam@@现在进行时中，句子表示动作正在发生，主语 The children 是复数，用 are swimming，swim 双写 m 再加 -ing。@
+@一般进行时@@My mother _ in the kitchen.@@is cooking；cooks；cooked；cook@@现在进行时中，句子表示动作正在发生，主语 My mother 用 is cooking。@
+@一般进行时@@I _ my teeth now.@@am brushing；brush；brushes；brushed@@现在进行时中，now 提示动作正在发生，主语 I 用 am brushing。@
+@一般进行时@@He _ a letter now.@@is writing；writes；wrote；write@@现在进行时中，now 提示动作正在发生，write 去 e 加 -ing，变成 writing。@
+@一般进行时@@She _ a picture now.@@is drawing；draws；drew；draw@@现在进行时中，now 提示动作正在发生，用 is drawing。@
+@一般进行时@@They _ in the park now.@@are dancing；dance；dances；danced@@现在进行时中，now 提示动作正在发生，dance 去 e 加 -ing，变成 dancing。@
+@一般进行时@@The bird _ in the sky.@@is flying；flies；flew；fly@@现在进行时中，句子表示动作正在发生，fly 加 -ing 变成 flying。@
+@一般进行时@@We _ English now.@@are studying；study；studies；studied@@现在进行时中，now 提示动作正在发生，study 加 -ing 变成 studying。@
+@一般进行时@@The baby _ now.@@is crying；cries；cried；cry@@现在进行时中，now 提示动作正在发生，cry 加 -ing 变成 crying。@
+@一般进行时@@He _ a bike now.@@is riding；rides；rode；ride@@现在进行时中，now 提示动作正在发生，ride 去 e 加 -ing，变成 riding。@
+@一般进行时@@She _ a cake now.@@is making；makes；made；make@@现在进行时中，now 提示动作正在发生，make 去 e 加 -ing，变成 making。@
+@一般进行时@@I _ water now.@@am drinking；drink；drinks；drank@@现在进行时中，now 提示动作正在发生，主语 I 用 am drinking。@
+@一般进行时@@The dog _ after the cat.@@is running；runs；ran；run@@现在进行时中，句子表示动作正在发生，run 双写 n 再加 -ing。@
+@一般进行时@@They _ lunch now.@@are having；have；has；had@@现在进行时中，now 提示动作正在发生，have 去 e 加 -ing，变成 having。@
+@一般进行时@@She _ her hands now.@@is washing；washes；washed；wash@@现在进行时中，now 提示动作正在发生，用 is washing。@
+@一般进行时@@He _ TV now.@@is watching；watches；watched；watch@@现在进行时中，now 提示动作正在发生，用 is watching。@
+@一般进行时@@The students _ books now.@@are reading；read；reads；readed@@现在进行时中，now 提示动作正在发生，主语 The students 是复数，用 are reading。@
+@一般进行时@@My father _ a car now.@@is driving；drives；drove；drive@@现在进行时中，now 提示动作正在发生，drive 去 e 加 -ing。@
+@一般进行时@@We _ to music now.@@are listening；listen；listens；listened@@现在进行时中，now 提示动作正在发生，用 are listening。@
+@一般进行时@@The girl _ a song now.@@is singing；sings；sang；sing@@现在进行时中，now 提示动作正在发生，用 is singing。@
+@一般进行时@@I _ my room now.@@am cleaning；clean；cleans；cleaned@@现在进行时中，now 提示动作正在发生，主语 I 用 am cleaning。@
+@一般进行时@@He _ his teeth now.@@is brushing；brushes；brushed；brush@@现在进行时中，now 提示动作正在发生，用 is brushing。@
+@一般进行时@@Look! The bus _ .@@is coming；comes；came；come@@现在进行时中，Look! 提示动作正在发生，come 去 e 加 -ing，变成 coming。@
+@一般进行时@@Listen! The phone _ .@@is ringing；rings；rang；ring@@现在进行时中，Listen! 提示动作正在发生，用 is ringing。@
+@一般进行时@@The cat _ fish now.@@is eating；eats；ate；eat@@现在进行时中，now 提示动作正在发生，eat 加 -ing 变成 eating。@
+@一般进行时@@She _ a book now.@@is reading；reads；read；readed@@现在进行时中，now 提示动作正在发生，用 is reading。@
+@一般进行时@@They _ in the river now.@@are swimming；swim；swims；swam@@现在进行时中，now 提示动作正在发生，swim 双写 m 再加 -ing。@
+@一般进行时@@He _ a model plane now.@@is making；makes；made；make@@现在进行时中，now 提示动作正在发生，make 去 e 加 -ing。@
+@一般进行时@@We _ a party now.@@are having；have；has；had@@现在进行时中，now 提示动作正在发生，have 去 e 加 -ing。@
+@一般进行时@@The baby _ now.@@is smiling；smiles；smiled；smile@@现在进行时中，now 提示动作正在发生，smile 去 e 加 -ing。@
+@一般进行时@@I _ breakfast now.@@am eating；eat；eats；ate@@现在进行时中，now 提示动作正在发生，主语 I 用 am eating。@
+@一般进行时@@She _ her homework now.@@is doing；does；did；do@@现在进行时中，now 提示动作正在发生，用 is doing。@
+@一般进行时@@The boys _ basketball now.@@are playing；play；plays；played@@现在进行时中，now 提示动作正在发生，主语 The boys 是复数，用 are playing。@
+@一般进行时@@My sister _ a picture now.@@is drawing；draws；drew；draw@@现在进行时中，now 提示动作正在发生，用 is drawing。@
+@一般进行时@@He _ in the pool now.@@is swimming；swims；swam；swim@@现在进行时中，now 提示动作正在发生，swim 双写 m 再加 -ing。@
+@一般进行时@@They _ their homework now.@@are doing；do；does；did@@现在进行时中，now 提示动作正在发生，用 are doing。@
+@一般进行时@@The teacher _ now.@@is talking；talks；talked；talk@@现在进行时中，now 提示动作正在发生，用 is talking。@
+@一般进行时@@I _ a letter now.@@am writing；write；writes；wrote@@现在进行时中，now 提示动作正在发生，write 去 e 加 -ing。@
+@一般进行时@@She _ a red dress now.@@is wearing；wears；wore；wear@@现在进行时中，now 提示动作正在发生，用 is wearing。@
+@一般进行时@@The dog _ now.@@is sleeping；sleeps；slept；sleep@@现在进行时中，now 提示动作正在发生，用 is sleeping。@
+@一般进行时@@We _ our lunch now.@@are eating；eat；eats；ate@@现在进行时中，now 提示动作正在发生，用 are eating。@
+@一般进行时@@He _ a book now.@@is reading；reads；read；readed@@现在进行时中，now 提示动作正在发生，用 is reading。@
+@一般现在时@@My father _ TV every evening.@@watches；watch；watched；watching@@一般现在时中，every evening 表示习惯，主语 My father 是第三人称单数，watch 加 -es。@
+@一般过去时@@My father _ TV last evening.@@watched；watch；watches；watching@@一般过去时中，last evening 表示过去，watch 的过去式是 watched。@
+@一般进行时@@My father _ TV now.@@is watching；watches；watched；watch@@现在进行时中，now 提示动作正在发生，用 is watching。@
+@一般现在时@@The children _ to school every day.@@go；goes；went；going@@一般现在时中，every day 表示习惯，主语 The children 是复数，动词用原形 go。@
+@一般过去时@@The children _ to school yesterday.@@went；go；goes；going@@一般过去时中，yesterday 表示过去，go 的过去式是 went。@
+@一般进行时@@The children _ to school now.@@are going；go；goes；went@@现在进行时中，now 提示动作正在发生，用 are going。@
+@一般现在时@@She _ her homework every day.@@does；do；did；doing@@一般现在时中，every day 表示习惯，主语 She 是第三人称单数，do 变成 does。@
+@一般过去时@@She _ her homework yesterday.@@did；do；does；doing@@一般过去时中，yesterday 表示过去，do 的过去式是 did。@
+@一般进行时@@She _ her homework now.@@is doing；does；did；do@@现在进行时中，now 提示动作正在发生，用 is doing。@
+@一般现在时@@I _ apples every day.@@eat；eats；ate；eating@@一般现在时中，every day 表示习惯，主语 I 不是第三人称单数，动词用原形 eat。@
+@一般过去时@@I _ an apple yesterday.@@ate；eat；eats；eating@@一般过去时中，yesterday 表示过去，eat 的过去式是 ate。@
+@一般进行时@@I _ an apple now.@@am eating；eat；eats；ate@@现在进行时中，now 提示动作正在发生，主语 I 用 am eating。@
+@一般现在时@@He _ to music every night.@@listens；listen；listened；listening@@一般现在时中，every night 表示习惯，主语 He 是第三人称单数，listen 加 -s。@
+@一般过去时@@He _ to music last night.@@listened；listen；listens；listening@@一般过去时中，last night 表示过去，listen 的过去式是 listened。@
+@一般进行时@@He _ to music now.@@is listening；listens；listened；listen@@现在进行时中，now 提示动作正在发生，用 is listening。@
+@一般现在时@@They _ in the park every Sunday.@@play；plays；played；playing@@一般现在时中，every Sunday 表示习惯，主语 They 不是第三人称单数，动词用原形 play。@
+@一般过去时@@They _ in the park last Sunday.@@played；play；plays；playing@@一般过去时中，last Sunday 表示过去，play 的过去式是 played。@
+@一般进行时@@They _ in the park now.@@are playing；play；plays；played@@现在进行时中，now 提示动作正在发生，用 are playing。@
+@一般现在时@@My mother _ breakfast every morning.@@makes；make；made；making@@一般现在时中，every morning 表示习惯，主语 My mother 是第三人称单数，make 加 -s。@
+@一般过去时@@My mother _ breakfast yesterday morning.@@made；make；makes；making@@一般过去时中，yesterday morning 表示过去，make 的过去式是 made。@
+@字母语音@@字母表中第一个字母是？@@A；B；Z；Y@@字母表从A开始，所以第一个是A。@
+@字母语音@@字母表中最后一个字母是？@@Z；A；Y；X@@字母表到Z结束，所以最后是Z。@
+@字母语音@@下列哪个是元音字母？@@A；B；C；D@@元音字母是A、E、I、O、U，A是其中之一。@
+@字母语音@@字母Q后面常跟哪个字母？@@u；a；e；o@@英语中Q常和u连用，如queen。@
+@字母语音@@China中ch的发音是？@@/tʃ/；/k/；/ʃ/；/dʒ/@@China中ch发/tʃ/，类似“吃”的轻声。@
+@字母语音@@thank中th的发音是？@@/θ/；/ð/；/t/；/s/@@thank中th发/θ/，是咬舌清音。@
+@字母语音@@she中sh的发音是？@@/ʃ/；/s/；/tʃ/；/ʒ/@@she中sh发/ʃ/。@
+@字母语音@@see中ee的发音是？@@/iː/；/e/；/ɪ/；/aɪ/@@see中ee发长音/iː/。@
+@字母语音@@book中oo的发音是？@@/ʊ/；/uː/；/ʌ/；/əʊ/@@book中oo发短音/ʊ/。@
+@字母语音@@cake中a的发音是？@@/eɪ/；/æ/；/ɑː/；/ə/@@cake中a发字母音/eɪ/。@
+@字母语音@@bike中i的发音是？@@/aɪ/；/ɪ/；/iː/；/e/@@bike中i发字母音/aɪ/。@
+@字母语音@@nose中o的发音是？@@/əʊ/；/ɒ/；/ʌ/；/uː/@@nose中o发字母音/əʊ/。@
+@字母语音@@house中ou的发音是？@@/aʊ/；/əʊ/；/uː/；/ɔː/@@house中ou发/aʊ/。@
+@字母语音@@car中ar的发音是？@@/ɑː/；/ɔː/；/ə/；/eɪ/@@car中ar发/ɑː/。@
+@字母语音@@horse中or的发音是？@@/ɔː/；/ɜː/；/ə/；/aʊ/@@horse中or发/ɔː/。@
+@字母语音@@teacher中er的发音是？@@/ə/；/ɜː/；/ɔː/；/e/@@teacher中er在词尾常发/ə/。@
+@字母语音@@day中ay的发音是？@@/eɪ/；/aɪ/；/iː/；/æ/@@day中ay发/eɪ/。@
+@字母语音@@light中igh的发音是？@@/aɪ/；/ɪ/；/iː/；/eɪ/@@light中igh发/aɪ/。@
+@字母语音@@cow中ow的发音是？@@/aʊ/；/əʊ/；/uː/；/ɔː/@@cow中ow发/aʊ/。@
+@字母语音@@boat中oa的发音是？@@/əʊ/；/aʊ/；/ɔː/；/uː/@@boat中oa发/əʊ/。@
+@字母语音@@tea中ea的发音是？@@/iː/；/e/；/eɪ/；/aɪ/@@tea中ea发/iː/。@
+@词汇@@“苹果”的英语是？@@apple；banana；orange；pear@@apple意为苹果。@
+@词汇@@“香蕉”的英语是？@@banana；apple；grape；peach@@banana意为香蕉。@
+@词汇@@“猫”的英语是？@@cat；dog；pig；duck@@cat意为猫。@
+@词汇@@“狗”的英语是？@@dog；cat；bird；fish@@dog意为狗。@
+@词汇@@“书”的英语是？@@book；bag；pen；desk@@book意为书。@
+@词汇@@“钢笔”的英语是？@@pen；pencil；ruler；eraser@@pen意为钢笔。@
+@词汇@@“铅笔”的英语是？@@pencil；pen；book；bag@@pencil意为铅笔。@
+@词汇@@“书包”的英语是？@@bag；book；box；bed@@bag意为书包、包。@
+@词汇@@“老师”的英语是？@@teacher；student；doctor；driver@@teacher意为老师。@
+@词汇@@“学生”的英语是？@@student；teacher；nurse；farmer@@student意为学生。@
+@词汇@@“学校”的英语是？@@school；home；shop；park@@school意为学校。@
+@词汇@@“教室”的英语是？@@classroom；school；library；office@@classroom意为教室。@
+@词汇@@“桌子”的英语是？@@desk；chair；bed；door@@desk意为书桌、桌子。@
+@词汇@@“椅子”的英语是？@@chair；desk；table；sofa@@chair意为椅子。@
+@词汇@@“红色”的英语是？@@red；blue；green；yellow@@red意为红色。@
+@词汇@@“蓝色”的英语是？@@blue；red；black；white@@blue意为蓝色。@
+@词汇@@“绿色”的英语是？@@green；brown；yellow；orange@@green意为绿色。@
+@词汇@@“黄色”的英语是？@@yellow；red；blue；purple@@yellow意为黄色。@
+@词汇@@“一”的英语是？@@one；two；three；four@@one意为一。@
+@词汇@@“二”的英语是？@@two；one；three；ten@@two意为二。@
+@词汇@@“三”的英语是？@@three；two；four；five@@three意为三。@
+@词汇@@“四”的英语是？@@four；five；six；seven@@four意为四。@
+@词汇@@“五”的英语是？@@five；four；six；nine@@five意为五。@
+@词汇@@“六”的英语是？@@six；seven；eight；ten@@six意为六。@
+@词汇@@“七”的英语是？@@seven；six；eight；nine@@seven意为七。@
+@词汇@@“八”的英语是？@@eight；seven；nine；ten@@eight意为八。@
+@词汇@@“九”的英语是？@@nine；eight；ten；seven@@nine意为九。@
+@词汇@@“十”的英语是？@@ten；nine；eight；seven@@ten意为十。@
+@词汇@@“星期一”的英语是？@@Monday；Tuesday；Sunday；Friday@@Monday意为星期一。@
+@词汇@@“星期二”的英语是？@@Tuesday；Monday；Wednesday；Thursday@@Tuesday意为星期二。@
+@词汇@@“星期三”的英语是？@@Wednesday；Tuesday；Thursday；Friday@@Wednesday意为星期三。@
+@词汇@@“星期四”的英语是？@@Thursday；Tuesday；Wednesday；Friday@@Thursday意为星期四。@
+@词汇@@“星期五”的英语是？@@Friday；Monday；Sunday；Saturday@@Friday意为星期五。@
+@词汇@@“星期六”的英语是？@@Saturday；Sunday；Monday；Friday@@Saturday意为星期六。@
+@词汇@@“星期日”的英语是？@@Sunday；Saturday；Monday；Tuesday@@Sunday意为星期日。@
+@词汇@@“春天”的英语是？@@spring；summer；autumn；winter@@spring意为春天。@
+@词汇@@“夏天”的英语是？@@summer；spring；autumn；winter@@summer意为夏天。@
+@词汇@@“秋天”的英语是？@@autumn；spring；summer；winter@@autumn意为秋天。@
+@词汇@@“冬天”的英语是？@@winter；spring；summer；autumn@@winter意为冬天。@
+@词汇@@“父亲”的英语是？@@father；mother；brother；sister@@father意为父亲。@
+@词汇@@“母亲”的英语是？@@mother；father；brother；sister@@mother意为母亲。@
+@词汇@@“兄弟”的英语是？@@brother；sister；father；mother@@brother意为兄弟。@
+@词汇@@“姐妹”的英语是？@@sister；brother；mother；father@@sister意为姐妹。@
+@词汇@@“医生”的英语是？@@doctor；nurse；driver；teacher@@doctor意为医生。@
+@词汇@@“护士”的英语是？@@nurse；doctor；teacher；farmer@@nurse意为护士。@
+@词汇@@“司机”的英语是？@@driver；doctor；nurse；teacher@@driver意为司机。@
+@词汇@@“警察”的英语是？@@policeman；doctor；driver；nurse@@policeman意为警察。@
+@词汇@@“米饭”的英语是？@@rice；bread；milk；noodles@@rice意为米饭。@
+@词汇@@“面包”的英语是？@@bread；rice；milk；cake@@bread意为面包。@
+@词汇@@“牛奶”的英语是？@@milk；water；juice；tea@@milk意为牛奶。@
+@语法@@I ___ a student.@@am；is；are；be@@主语I用am。@
+@语法@@He ___ my friend.@@is；am；are；be@@主语He是第三人称单数，用is。@
+@语法@@They ___ happy.@@are；is；am；be@@主语They是复数，用are。@
+@语法@@This ___ a book.@@is；are；am；be@@主语This是单数，用is。@
+@语法@@These ___ apples.@@are；is；am；be@@These是复数，用are。@
+@语法@@I have two ___.@@apples；apple；a apple；an apple@@two后接可数名词复数apples。@
+@语法@@She ___ English.@@likes；like；liking；to like@@She是第三人称单数，动词用likes。@
+@语法@@He ___ TV every day.@@watches；watch；watching；to watch@@He是第三人称单数，watch加es变watches。@
+@语法@@There ___ a cat on the desk.@@is；are；am；be@@a cat是单数，用is。@
+@语法@@There ___ some books.@@are；is；am；be@@some books是复数，用are。@
+@语法@@I can ___.@@swim；swims；swimming；to swim@@can后接动词原形swim。@
+@语法@@She can ___.@@dance；dances；dancing；to dance@@can后接动词原形dance。@
+@语法@@___ you like apples?@@Do；Does；Is；Are@@主语you，一般现在时用Do。@
+@语法@@___ he like bananas?@@Does；Do；Is；Are@@主语he，一般现在时用Does。@
+@语法@@I ___ not like milk.@@do；does；is；am@@I的否定用do not。@
+@语法@@She ___ not like tea.@@does；do；is；are@@She的否定用does not。@
+@语法@@This is ___ pencil.@@my；I；me；mine@@my是形容词性物主代词，后接名词pencil。@
+@语法@@That is ___ book.@@his；he；him；he's@@his是形容词性物主代词，后接book。@
+@语法@@These are ___ toys.@@their；they；them；theirs@@their后接名词toys。@
+@语法@@The book is ___.@@mine；my；I；me@@mine是名词性物主代词，单独使用。@
+@语法@@I am ___ than you.@@taller；tall；tallest；more tall@@than前用比较级taller。@
+@语法@@She is the ___ in class.@@tallest；taller；tall；more tall@@the后最高级tallest。@
+@语法@@This apple is ___ than that one.@@bigger；big；biggest；more big@@than前用比较级bigger。@
+@语法@@I ___ to school every day.@@go；goes；going；went@@主语I，一般现在时用go。@
+@语法@@She ___ to school every day.@@goes；go；going；went@@She是第三人称单数，用goes。@
+@语法@@I ___ my homework yesterday.@@did；do；does；doing@@yesterday表示过去，用did。@
+@语法@@We ___ TV last night.@@watched；watch；watches；watching@@last night表示过去，用watched。@
+@语法@@I am ___ a book now.@@reading；read；reads；to read@@now表示现在进行时，用reading。@
+@语法@@Look! She ___ singing.@@is；are；am；be@@Look说明现在进行时，She用is。@
+@语法@@I have ___ orange.@@an；a；the；/@@orange以元音音素开头，用an。@
+@语法@@___ sun is big.@@The；A；An；/@@世界上独一无二的事物前用The。@
+@语法@@I go to school ___ bus.@@by；on；in；at@@by bus表示乘公共汽车。@
+@语法@@I get up ___ 7 o'clock.@@at；on；in；to@@具体时刻前用at。@
+@语法@@My birthday is ___ May.@@in；on；at；to@@月份前用in。@
+@语法@@We have English ___ Monday.@@on；in；at；to@@星期前用on。@
+@语法@@There is a picture ___ the wall.@@on；in；at；to@@在墙表面用on。@
+@语法@@The cat is ___ the box.@@in；on；at；to@@在盒子里面用in。@
+@语法@@I like apples, ___ I don't like bananas.@@but；and；or；so@@前后意思转折，用but。@
+@语法@@I like apples ___ bananas.@@and；but；or；so@@并列喜欢用and。@
+@语法@@___ is your name?@@What；Who；Where；How@@问名字用What。@
+@语法@@___ old are you?@@How；What；Who；Where@@问年龄用How old。@
+@语法@@___ is he? He is my brother.@@Who；What；Where；How@@问人是谁用Who。@
+@语法@@___ is the book? It's on the desk.@@Where；What；Who；How@@问地点用Where。@
+@语法@@___ colour is it?@@What；How；Who；Where@@问颜色用What colour。@
+@语法@@___ are you? I'm fine.@@How；What；Who；Where@@问身体状况用How are you。@
+@语法@@I ___ a cat.@@have；has；am；is@@主语I用have。@
+@语法@@She ___ a dog.@@has；have；is；are@@She是第三人称单数，用has。@
+@语法@@He ___ football.@@plays；play；playing；to play@@He是第三人称单数，用plays。@
+@句型@@早上见面说？@@Good morning!；Good night!；Goodbye!；Sorry!@@Good morning是早上问候语。@
+@句型@@下午见面说？@@Good afternoon!；Good morning!；Good evening!；Good night!@@Good afternoon是下午问候语。@
+@句型@@晚上见面说？@@Good evening!；Good morning!；Good afternoon!；Good night!@@Good evening是晚上见面问候。@
+@句型@@睡前道别说？@@Good night!；Good morning!；Good afternoon!；Hello!@@Good night用于晚上道别或睡前。@
+@句型@@“你好吗？”的英语是？@@How are you?；What's your name?；How old are you?；Where are you?@@How are you用于问对方好不好。@
+@句型@@“我很好，谢谢。”的英语是？@@I'm fine, thank you.；I'm ten.；My name is Tom.；Goodbye.@@I'm fine, thank you回答How are you。@
+@句型@@“你叫什么名字？”的英语是？@@What's your name?；How are you?；How old are you?；Where are you?@@What's your name问名字。@
+@句型@@“我叫小明。”的英语是？@@My name is Xiaoming.；I'm fine.；I'm ten.；This is Xiaoming.@@My name is...用于介绍名字。@
+@句型@@“很高兴见到你。”的英语是？@@Nice to meet you.；Good night.；Thank you.；Sorry.@@Nice to meet you是初次见面用语。@
+@句型@@“也很高兴见到你。”的英语是？@@Nice to meet you, too.；Nice to meet you.；How are you?；Goodbye.@@回答Nice to meet you用too。@
+@句型@@“这是什么？”的英语是？@@What's this?；What's that?；Who's this?；How is this?@@问近处物品用What's this。@
+@句型@@“它是一只猫。”的英语是？@@It's a cat.；It's a dog.；This is cat.；That a cat.@@It's a cat表示它是一只猫。@
+@句型@@“那是什么？”的英语是？@@What's that?；What's this?；Who's that?；How's that?@@问远处物品用What's that。@
+@句型@@“它是一本书。”的英语是？@@It's a book.；It's a bag.；This is book.；That book.@@It's a book表示它是一本书。@
+@句型@@“你多大了？”的英语是？@@How old are you?；How are you?；What's your name?；Where are you?@@How old are you问年龄。@
+@句型@@“我十岁。”的英语是？@@I'm ten.；I'm fine.；I'm Tom.；I'm here.@@I'm ten表示我十岁。@
+@句型@@“这是你的铅笔吗？”的英语是？@@Is this your pencil?；This is your pencil.；Is this you pencil?；Are this your pencil?@@一般疑问句Is this your pencil?。@
+@句型@@“是的，它是。”的英语是？@@Yes, it is.；Yes, I am.；Yes, he is.；Yes, they are.@@Is this...?回答Yes, it is。@
+@句型@@“不，它不是。”的英语是？@@No, it isn't.；No, I'm not.；No, he isn't.；No, they aren't.@@Is this...?否定回答No, it isn't。@
+@句型@@“你喜欢苹果吗？”的英语是？@@Do you like apples?；Are you like apples?；Does you like apples?；Do you apples?@@主语you用Do you like...?。@
+@句型@@“是的，我喜欢。”的英语是？@@Yes, I do.；Yes, I am.；Yes, it is.；Yes, I can.@@Do you...?回答Yes, I do。@
+@句型@@“不，我不喜欢。”的英语是？@@No, I don't.；No, I'm not.；No, it isn't.；No, I can't.@@Do you...?否定回答No, I don't。@
+@句型@@“你会游泳吗？”的英语是？@@Can you swim?；Do you swim?；Are you swim?；Can you swimming?@@Can you swim?问能力。@
+@句型@@“是的，我会。”的英语是？@@Yes, I can.；Yes, I do.；Yes, I am.；Yes, it is.@@Can you...?回答Yes, I can。@
+@句型@@“不，我不会。”的英语是？@@No, I can't.；No, I don't.；No, I'm not.；No, it isn't.@@Can you...?否定回答No, I can't。@
+@句型@@“现在几点了？”的英语是？@@What time is it?；What day is it?；What's the date?；How old are you?@@What time is it问时间。@
+@句型@@“八点了。”的英语是？@@It's eight o'clock.；It's Monday.；It's sunny.；It's eight yuan.@@It's eight o'clock表示八点。@
+@句型@@“今天星期几？”的英语是？@@What day is it today?；What time is it?；What's the date?；How is today?@@What day问星期。@
+@句型@@“今天星期一。”的英语是？@@It's Monday.；It's eight.；It's May.；It's sunny.@@Monday是星期一。@
+@句型@@“今天天气怎么样？”的英语是？@@What's the weather like today?；What day is it today?；What time is it?；How old are you?@@问天气用What's the weather like。@
+@句型@@“今天晴天。”的英语是？@@It's sunny.；It's Monday.；It's eight.；It's red.@@sunny表示晴天。@
+@句型@@“你去哪里？”的英语是？@@Where are you going?；What are you doing?；How are you?；Who are you?@@Where问地点。@
+@句型@@“我去学校。”的英语是？@@I'm going to school.；I'm from school.；I like school.；I have school.@@go to school表示去学校。@
+@句型@@“你从哪里来？”的英语是？@@Where are you from?；Where are you going?；What are you?；How are you?@@Where are you from问来自哪里。@
+@句型@@“我来自中国。”的英语是？@@I'm from China.；I'm in China.；I go China.；I like China.@@I'm from China表示来自中国。@
+@句型@@“这是谁？”的英语是？@@Who is this?；What is this?；Where is this?；How is this?@@Who问人。@
+@句型@@“这是我妈妈。”的英语是？@@This is my mother.；This is my father.；She my mother.；This my mother.@@This is...介绍人。@
+@句型@@“你想喝什么？”的英语是？@@What would you like to drink?；What would you like to eat?；What do you like?；How are you?@@drink表示喝。@
+@句型@@“我想要牛奶。”的英语是？@@I'd like milk.；I like milk.；I'd like apples.；I milk.@@I'd like表示想要。@
+@句型@@“多少钱？”的英语是？@@How much is it?；How old is it?；How many is it?；What is it?@@How much问价格。@
+@句型@@“五元。”的英语是？@@It's five yuan.；It's five.；It's five o'clock.；It's five years.@@yuan是人民币单位。@
+@句型@@“请给我一个苹果。”的英语是？@@An apple, please.；A apple, please.；Apple please.；Give apple.@@An apple, please是请求。@
+@句型@@“给你。”的英语是？@@Here you are.；Here are you.；You here are.；Give you.@@Here you are表示给你。@
+@句型@@“谢谢。”的英语是？@@Thank you.；Sorry.；Goodbye.；Hello.@@Thank you表示感谢。@
+@句型@@“不客气。”的英语是？@@You're welcome.；Thank you.；Sorry.；Good morning.@@You're welcome回答感谢。@
+@句型@@“对不起。”的英语是？@@I'm sorry.；Thank you.；You're welcome.；Good night.@@I'm sorry表示道歉。@
+@句型@@“没关系。”的英语是？@@That's all right.；Thank you.；Good morning.；Sorry.@@That's all right回答道歉。@
+@句型@@“再见。”的英语是？@@Goodbye.；Hello.；Good morning.；Thank you.@@Goodbye表示再见。@
+@句型@@“明天见。”的英语是？@@See you tomorrow.；See you yesterday.；Good night.；Hello.@@See you tomorrow表示明天见。@
+@句型@@“祝你有美好的一天。”的英语是？@@Have a nice day.；Have a good night.；How are you?；Good morning.@@Have a nice day是祝福语。@
+@日常交际@@别人说“Thank you!”时，应回答？@@You're welcome.；Thank you.；Good morning.；Sorry.@@回答感谢用You're welcome。@
+@日常交际@@别人说“Sorry.”时，应回答？@@That's all right.；Thank you.；Good morning.；Goodbye.@@回答道歉用That's all right。@
+@日常交际@@早上见到老师，应说？@@Good morning.；Good night.；Goodbye.；Sorry.@@早上问候用Good morning。@
+@日常交际@@下午见到同学，应说？@@Good afternoon.；Good morning.；Good evening.；Good night.@@下午问候用Good afternoon。@
+@日常交际@@晚上睡觉前，应说？@@Good night.；Good morning.；Good afternoon.；Hello.@@睡前道别用Good night。@
+@日常交际@@第一次见面，应说？@@Nice to meet you.；Goodbye.；Sorry.；Thank you.@@初次见面用Nice to meet you。@
+@日常交际@@别人问“How are you?”时，应回答？@@I'm fine, thank you.；I'm ten.；My name is Tom.；Goodbye.@@How are you问身体情况。@
+@日常交际@@别人说“Happy birthday!”时，应回答？@@Thank you.；Happy birthday!；Sorry.；Good night.@@接受祝福用Thank you。@
+@日常交际@@别人说“Merry Christmas!”时，应回答？@@Merry Christmas!；Thank you.；Good morning.；Sorry.@@圣诞节互相祝福。@
+@日常交际@@别人说“Happy New Year!”时，应回答？@@Happy New Year!；Good night.；Sorry.；Thank you.@@新年互相祝福。@
+@日常交际@@打电话时介绍自己，应说？@@This is Tom speaking.；I am Tom speaking.；You are Tom.；Who are you?@@电话中常用This is... speaking。@
+@日常交际@@打电话问对方是谁，应说？@@Who's that?；Who's this?；What's that?；Where are you?@@电话中问对方常用Who's that?。@
+@日常交际@@请求别人帮忙，应说？@@Can you help me?；Can I help you?；How are you?；What's this?@@Can you help me?请求帮助。@
+@日常交际@@同意帮忙，应说？@@Sure.；Sorry.；Goodbye.；No.@@Sure表示当然可以。@
+@日常交际@@询问价格，应说？@@How much is it?；How old is it?；What is it?；Where is it?@@How much问价格。@
+@日常交际@@购物时售货员常问？@@Can I help you?；Can you help me?；How are you?；What's this?@@Can I help you?是售货员用语。@
+@日常交际@@点餐时想说“我想要面条”，应说？@@I'd like some noodles.；I like noodle.；I'd like some rice.；I want noodle.@@I'd like some noodles是礼貌点餐。@
+@日常交际@@问路前应先说？@@Excuse me.；Thank you.；Goodbye.；Sorry.@@Excuse me用于打扰别人前。@
+@日常交际@@指路说“直走”，应说？@@Go straight.；Turn left.；Turn right.；Stop.@@Go straight表示直走。@
+@日常交际@@红灯时，应说？@@Stop at a red light.；Go at a red light.；Wait at a red light.；Run at a red light.@@红灯停。@
+@日常交际@@绿灯时，应说？@@Go at a green light.；Stop at a green light.；Wait at a green light.；Turn at a green light.@@绿灯行。@
+@日常交际@@黄灯时，应说？@@Wait at a yellow light.；Go at a yellow light.；Stop at a yellow light.；Run at a yellow light.@@黄灯等。@
+@日常交际@@介绍朋友，应说？@@This is my friend.；This is me.；I am friend.；You are my friend.@@This is...介绍他人。@
+@日常交际@@欢迎别人，应说？@@Welcome to my home.；Goodbye.；Sorry.；Thank you.@@Welcome表示欢迎。@
+@日常交际@@祝别人好运，应说？@@Good luck.；Good night.；Good morning.；Sorry.@@Good luck表示祝好运。@
+@日常交际@@祝贺别人，应说？@@Congratulations.；Sorry.；Goodbye.；Excuse me.@@Congratulations表示祝贺。@
+@日常交际@@安慰别人，应说？@@Don't worry.；Thank you.；Goodbye.；Happy birthday.@@Don't worry表示别担心。@
+@日常交际@@提醒别人小心，应说？@@Be careful.；Be happy.；Be quick.；Be quiet.@@Be careful表示小心。@
+@日常交际@@邀请别人，应说？@@Would you like to come?；What would you like?；How are you?；Where are you?@@Would you like to...?表示邀请。@
+@日常交际@@接受邀请，应说？@@Yes, I'd love to.；No, I can't.；Sorry.；Goodbye.@@Yes, I'd love to表示接受。@
+@日常交际@@拒绝邀请，应说？@@Sorry, I can't.；Yes, I'd love to.；Sure.；OK.@@Sorry, I can't表示委婉拒绝。@
+@日常交际@@请求进入，应说？@@May I come in?；May I come?；Can I come in?；Let me come in.@@May I come in?是礼貌请求。@
+@日常交际@@回答“可以，请进”，应说？@@Yes, please.；No, you can't.；Sorry.；Goodbye.@@Yes, please表示同意。@
+@日常交际@@回答“不可以”，应说？@@No, you can't.；Yes, please.；Sure.；OK.@@No, you can't表示不允许。@
+@日常交际@@问时间，应说？@@What time is it?；What day is it?；What's the date?；How old are you?@@What time问时间。@
+@日常交际@@问日期，应说？@@What's the date today?；What day is it today?；What time is it?；How is today?@@What's the date问日期。@
+@日常交际@@问星期，应说？@@What day is it today?；What's the date today?；What time is it?；What's this?@@What day问星期。@
+@日常交际@@问天气，应说？@@What's the weather like?；What day is it?；What time is it?；What colour is it?@@What's the weather like问天气。@
+@日常交际@@问颜色，应说？@@What colour is it?；What time is it?；What day is it?；How old is it?@@What colour问颜色。@
+@阅读理解@@Tom is a boy. He is ten. Tom is ___.@@ten；nine；eleven；twelve@@文中说He is ten，所以Tom十岁。@
+@阅读理解@@Lily has a cat. The cat is white. The cat is ___.@@white；black；red；blue@@文中说The cat is white。@
+@阅读理解@@I have a red pen. It is in my bag. The pen is ___.@@in the bag；on the desk；under the chair；in the box@@文中说It is in my bag。@
+@阅读理解@@Amy likes apples. She doesn't like bananas. Amy likes ___.@@apples；bananas；oranges；pears@@文中说Amy likes apples。@
+@阅读理解@@It is Monday today. We have English. Today is ___.@@Monday；Tuesday；Sunday；Friday@@文中说It is Monday today。@
+@阅读理解@@It is sunny today. We can play football. It is ___.@@sunny；rainy；windy；snowy@@文中说It is sunny today。@
+@阅读理解@@My father is a doctor. He works in a hospital. My father is a ___.@@doctor；teacher；driver；nurse@@文中说My father is a doctor。@
+@阅读理解@@My mother is a teacher. She works in a school. She works in a ___.@@school；hospital；shop；park@@文中说She works in a school。@
+@阅读理解@@I get up at six. I go to school at seven. I get up at ___.@@six；seven；eight；nine@@文中说I get up at six。@
+@阅读理解@@There are five books on the desk. There are ___ books.@@five；four；six；seven@@文中说five books。@
+@阅读理解@@The cat is under the chair. The cat is ___ the chair.@@under；on；in；behind@@文中说under the chair。@
+@阅读理解@@Sam can swim. He can't dance. Sam can ___.@@swim；dance；sing；draw@@文中说Sam can swim。@
+@阅读理解@@I like milk. I drink milk every morning. I drink ___ every morning.@@milk；water；juice；tea@@文中说I drink milk every morning。@
+@阅读理解@@Lucy is from China. She is Chinese. Lucy is from ___.@@China；England；America；Canada@@文中说Lucy is from China。@
+@阅读理解@@Today is my birthday. I am nine. I am ___ years old.@@nine；eight；ten；seven@@文中说I am nine。@
+@阅读理解@@The apple is red. It is sweet. The apple is ___.@@red；green；yellow；blue@@文中说The apple is red。@
+@阅读理解@@My schoolbag is blue. It is heavy. The schoolbag is ___.@@blue；red；black；white@@文中说My schoolbag is blue。@
+@阅读理解@@I have two sisters. They are twins. I have ___ sisters.@@two；one；three；four@@文中说two sisters。@
+@阅读理解@@We have lunch at twelve. We have lunch at ___.@@twelve；eleven；one；two@@文中说at twelve。@
+@阅读理解@@It is winter. It is cold. It is ___.@@winter；summer；spring；autumn@@文中说It is winter。@
+@文化常识@@中国国旗的主要颜色是？@@红色和黄色；蓝色和白色；绿色和红色；黑色和白色@@中国国旗是五星红旗，红色和黄色。@
+@文化常识@@英国的首都是？@@London；Beijing；New York；Paris@@London是英国首都。@
+@文化常识@@美国的首都是？@@Washington D.C.；New York；London；Paris@@Washington D.C.是美国首都。@
+@文化常识@@中国的首都是？@@Beijing；Shanghai；London；Tokyo@@Beijing是中国首都。@
+@文化常识@@圣诞节是几月几日？@@December 25th；December 24th；January 1st；October 31st@@圣诞节在12月25日。@
+@文化常识@@儿童节是几月几日？@@June 1st；May 1st；September 10th；October 1st@@儿童节在6月1日。@
+@文化常识@@教师节是几月几日？@@September 10th；June 1st；May 1st；October 1st@@教师节在9月10日。@
+@文化常识@@春节是中国的什么节日？@@新年；圣诞节；感恩节；万圣节@@春节是中国新年。@
+@文化常识@@圣诞老人英语是？@@Santa Claus；Easter Bunny；Father Christmas?@@Santa Claus是圣诞老人。@
+@文化常识@@复活节兔子英语是？@@Easter Bunny；Santa Claus；Teddy Bear；Mickey Mouse@@Easter Bunny是复活节兔子。@
+@文化常识@@感恩节主要在哪个国家？@@美国；中国；英国；法国@@感恩节是美国重要节日。@
+@文化常识@@万圣节是几月几日？@@October 31st；December 25th；June 1st；May 1st@@万圣节在10月31日。@
+@文化常识@@“Hello”用于？@@问候；道歉；感谢；告别@@Hello是问候语。@
+@文化常识@@英国人见面常用？@@Hello；Sorry；Goodbye；Thanks@@Hello是常见问候。@
+@文化常识@@美国人常用？@@Hi；Sorry；Goodbye；Thanks@@Hi是美式常见问候。@
+@文化常识@@中国人吃饭常用？@@chopsticks；knife and fork；spoon only；hands@@中国人常用筷子chopsticks。@
+@文化常识@@西方人吃饭常用？@@knife and fork；chopsticks；spoon only；hands@@西方人常用刀叉。@
+@文化常识@@英语姓名中first name是？@@名；姓；中间名；昵称@@first name是名。@
+@文化常识@@英语姓名中last name是？@@姓；名；中间名；昵称@@last name是姓。@
+@文化常识@@英国货币是？@@pound；dollar；yuan；euro@@英国货币是pound。@
+@文化常识@@美国货币是？@@dollar；pound；yuan；euro@@美国货币是dollar。@
+@文化常识@@中国货币是？@@yuan；dollar；pound；euro@@中国货币是yuan。@
+@文化常识@@联合国总部在？@@New York；London；Beijing；Paris@@联合国总部在美国纽约。@
+@文化常识@@奥运会五环有几种颜色？@@五种；三种；四种；六种@@奥运五环由五种颜色组成。@
+@文化常识@@熊猫是哪个国家的国宝？@@中国；美国；英国；澳大利亚@@熊猫是中国国宝。@
+@文化常识@@袋鼠来自？@@Australia；China；America；England@@袋鼠来自澳大利亚。@
+@文化常识@@埃菲尔铁塔在？@@France；England；America；China@@埃菲尔铁塔在法国。@
+@文化常识@@长城在？@@China；America；England；France@@长城在中国。@
+@文化常识@@自由女神像在？@@America；China；England；France@@自由女神像在美国。@
+@文化常识@@大本钟在？@@England；America；China；France@@大本钟在英国。@
+@语法@@I have two ___.@@books；book；a book；an book@@two后接复数books。@
+@语法@@She is ___ girl.@@a；an；the；/@@girl以辅音音素开头，用a。@
+@语法@@He is ___ honest boy.@@an；a；the；/@@honest中h不发音，以元音音素开头，用an。@
+@语法@@We ___ students.@@are；is；am；be@@We是复数，用are。@
+@语法@@It ___ a dog.@@is；are；am；be@@It是单数，用is。@
+@语法@@I ___ happy.@@am；is；are；be@@I用am。@
+@语法@@You ___ my friend.@@are；is；am；be@@You用are。@
+@语法@@He ___ a new bike.@@has；have；is；are@@He是第三人称单数，用has。@
+@语法@@They ___ two cats.@@have；has；is；are@@They用have。@
+@语法@@My sister ___ music.@@likes；like；liking；to like@@My sister是第三人称单数，用likes。@
+@语法@@We ___ football after school.@@play；plays；playing；to play@@We用动词原形play。@
+@语法@@Tom ___ his homework now.@@is doing；do；does；did@@now表示现在进行时，用is doing。@
+@语法@@I ___ a film last Sunday.@@saw；see；sees；seeing@@last Sunday表示过去，用saw。@
+@语法@@There ___ a pen and two books.@@is；are；am；be@@There be就近原则，a pen是单数，用is。@
+@语法@@There ___ two books and a pen.@@are；is；am；be@@就近two books是复数，用are。@
+@语法@@This is ___ apple.@@an；a；the；/@@apple以元音音素开头，用an。@
+@语法@@That is ___ old man.@@an；a；the；/@@old以元音音素开头，用an。@
+@语法@@I can see ___ bird.@@a；an；the；/@@bird以辅音音素开头，用a。@
+@语法@@___ you have a ruler?@@Do；Does；Is；Are@@主语you，用Do。@
+@语法@@___ she have a ruler?@@Does；Do；Is；Are@@主语she，用Does。@
+@语法@@I don't ___ tea.@@like；likes；liking；to like@@don't后接动词原形like。@
+@语法@@She doesn't ___ coffee.@@like；likes；liking；to like@@doesn't后接动词原形like。@
+@语法@@Look! The boys ___ football.@@are playing；is playing；play；plays@@Look说明现在进行时，boys复数用are playing。@
+@语法@@I ___ my room every day.@@clean；cleans；cleaning；cleaned@@every day表示一般现在时，I用clean。@
+@语法@@My father ___ TV in the evening.@@watches；watch；watching；watched@@My father是第三人称单数，用watches。@
+@语法@@This book is ___ than that one.@@thicker；thick；thickest；more thick@@than前用比较级thicker。@
+@语法@@He is the ___ boy in our class.@@tallest；taller；tall；more tall@@the后最高级tallest。@
+@语法@@I am two years ___ than you.@@older；old；oldest；more old@@than前用比较级older。@
+@语法@@The pen is ___.@@mine；my；I；me@@mine是名词性物主代词，单独使用。@
+@语法@@This is ___ book.@@her；she；hers；she's@@her后接名词book。@
+@语法@@The bag is ___.@@hers；her；she；she's@@hers是名词性物主代词，单独使用。@
+@语法@@I go to bed ___ nine.@@at；on；in；to@@具体时刻前用at。@
+@语法@@We have a party ___ Children's Day.@@on；in；at；to@@具体某天前用on。@
+@语法@@It often rains ___ summer.@@in；on；at；to@@季节前用in。@
+@语法@@The ball is ___ the bed.@@under；on；in；at@@under表示在……下面。@
+@语法@@The picture is ___ the wall.@@on；in；at；under@@在墙表面用on。@
+@语法@@I like red ___ blue.@@and；but；or；so@@并列颜色用and。@
+@语法@@He is young, ___ he is strong.@@but；and；or；so@@前后转折用but。@
+@语法@@___ is your father? He is a doctor.@@What；Who；Where；How@@问职业用What。@
+@语法@@___ is your father? He is in the room.@@Where；What；Who；How@@问地点用Where。@
+@语法@@___ is your father? He is fine.@@How；What；Who；Where@@问身体情况用How。@
+@语法@@___ is that man? He is my uncle.@@Who；What；Where；How@@问人是谁用Who。@
+@语法@@___ colour is your bag?@@What；How；Who；Where@@问颜色用What colour。@
+@语法@@___ old is your sister?@@How；What；Who；Where@@问年龄用How old。@
+@句型@@“请打开书。”的英语是？@@Open your book, please.；Close your book, please.；Read your book, please.；Write your book, please.@@Open your book表示打开书。@
+@句型@@“请关上门。”的英语是？@@Close the door, please.；Open the door, please.；Clean the door, please.；Look at the door, please.@@Close the door表示关门。@
+@句型@@“请坐下。”的英语是？@@Sit down, please.；Stand up, please.；Come in, please.；Go out, please.@@Sit down表示坐下。@
+@句型@@“请起立。”的英语是？@@Stand up, please.；Sit down, please.；Come here, please.；Go there, please.@@Stand up表示起立。@
+@句型@@“请安静。”的英语是？@@Be quiet, please.；Be careful, please.；Be happy, please.；Be quick, please.@@Be quiet表示安静。@
+@句型@@“请再说一遍。”的英语是？@@Pardon?；Hello?；Goodbye?；Sorry?@@Pardon?表示请再说一遍。@
+@句型@@“我不知道。”的英语是？@@I don't know.；I know.；I don't like.；I can't know.@@I don't know表示不知道。@
+@句型@@“我也是。”的英语是？@@Me too.；I too.；Me also.；I am too.@@Me too表示我也是。@
+@句型@@“该上学了。”的英语是？@@It's time to go to school.；It's time go school.；It's time school.；Time to school.@@It's time to...表示该做某事了。@
+@句型@@“该吃午饭了。”的英语是？@@It's time for lunch.；It's time lunch.；Time to lunch.；It's lunch time to.@@It's time for lunch表示该吃午饭了。@
+@句型@@“让我们一起玩吧。”的英语是？@@Let's play together.；Let's play, too.；Let us play?；We play together.@@Let's...表示让我们……。@
+@句型@@“不要迟到。”的英语是？@@Don't be late.；Don't late.；No be late.；Not late.@@Don't后接动词原形be。@
+@句型@@“请帮我一下。”的英语是？@@Please help me.；Please help I.；Please me help.；Help please me.@@help后接宾格me。@
+@句型@@“看黑板。”的英语是？@@Look at the blackboard.；Look the blackboard.；See at the blackboard.；Watch the blackboard.@@look at表示看……。@
+@句型@@“听我说。”的英语是？@@Listen to me.；Listen me.；Hear to me.；Listen I.@@listen to表示听……。@
+@句型@@“非常感谢。”的英语是？@@Thank you very much.；Thank very much you.；Very thank you.；Thanks you very much.@@Thank you very much是常用感谢语。@
+@句型@@“不用谢。”的英语是？@@Not at all.；Thank you.；Sorry.；Goodbye.@@Not at all可回答感谢。@
+@句型@@“请进。”的英语是？@@Come in, please.；Go in, please.；Come here, please.；Go out, please.@@Come in表示请进。@
+@句型@@“请出去。”的英语是？@@Go out, please.；Come in, please.；Go away, please.；Come out, please.@@Go out表示出去。@
+@句型@@“几点了？”的英语是？@@What time is it?；What day is it?；What's the date?；How old is it?@@What time问时间。@
+@句型@@“今天几号？”的英语是？@@What's the date today?；What day is it today?；What time is it?；How is today?@@What's the date问日期。@
+@句型@@“今天星期几？”的英语是？@@What day is it today?；What's the date today?；What time is it?；What's today?@@What day问星期。@
+@句型@@“天气怎么样？”的英语是？@@What's the weather like?；What day is it?；What time is it?；What colour is it?@@What's the weather like问天气。@
+@句型@@“它是什么颜色？”的英语是？@@What colour is it?；What time is it?；What day is it?；How old is it?@@What colour问颜色。@
+@日常交际@@别人说“Happy New Year!”时，应回答？@@Happy New Year!；Thank you.；Sorry.；Good night.@@新年问候应互相祝福。@
+@日常交际@@别人说“Merry Christmas!”时，应回答？@@Merry Christmas!；Good morning.；Sorry.；Thank you.@@圣诞节应互相祝福。@
+@日常交际@@别人说“Happy birthday!”时，应回答？@@Thank you.；Happy birthday!；Sorry.；Goodbye.@@接受生日祝福用Thank you。@
+@日常交际@@别人说“Nice to meet you.”时，应回答？@@Nice to meet you, too.；Goodbye.；Sorry.；Thank you.@@回答初次见面用too。@
+@日常交际@@别人说“How are you?”时，应回答？@@I'm fine, thank you.；I'm ten.；My name is Tom.；Good night.@@How are you问身体情况。@
+@日常交际@@别人说“Thank you.”时，应回答？@@You're welcome.；Thank you.；Sorry.；Good morning.@@回答感谢用You're welcome。@
+@日常交际@@别人说“Sorry.”时，应回答？@@That's all right.；Thank you.；Good morning.；Goodbye.@@回答道歉用That's all right。@
+@日常交际@@早上见到老师说？@@Good morning.；Good night.；Goodbye.；Sorry.@@早上问候用Good morning。@
+@日常交际@@下午见到同学说？@@Good afternoon.；Good morning.；Good evening.；Good night.@@下午问候用Good afternoon。@
+@日常交际@@晚上见到父母说？@@Good evening.；Good morning.；Good afternoon.；Good night.@@晚上见面用Good evening。@
+@日常交际@@睡前说？@@Good night.；Good morning.；Good afternoon.；Hello.@@睡前道别用Good night。@
+@日常交际@@第一次见面说？@@Nice to meet you.；Goodbye.；Sorry.；Thank you.@@初次见面用Nice to meet you。@
+@日常交际@@请求别人帮忙说？@@Can you help me?；Can I help you?；How are you?；What's this?@@Can you help me?请求帮助。@
+@日常交际@@同意帮忙说？@@Sure.；Sorry.；Goodbye.；No.@@Sure表示当然可以。@
+@日常交际@@问价格说？@@How much is it?；How old is it?；What is it?；Where is it?@@How much问价格。@
+@日常交际@@购物时售货员说？@@Can I help you?；Can you help me?；How are you?；What's this?@@Can I help you?是售货员用语。@
+@日常交际@@点餐说？@@I'd like some noodles.；I like noodle.；I'd like some rice.；I want noodle.@@I'd like some noodles是礼貌点餐。@
+@日常交际@@问路前说？@@Excuse me.；Thank you.；Goodbye.；Sorry.@@Excuse me用于打扰别人前。@
+@日常交际@@指路说“直走”？@@Go straight.；Turn left.；Turn right.；Stop.@@Go straight表示直走。@
+@日常交际@@红灯时？@@Stop at a red light.；Go at a red light.；Wait at a red light.；Run at a red light.@@红灯停。@
+@日常交际@@绿灯时？@@Go at a green light.；Stop at a green light.；Wait at a green light.；Turn at a green light.@@绿灯行。@
+@日常交际@@黄灯时？@@Wait at a yellow light.；Go at a yellow light.；Stop at a yellow light.；Run at a yellow light.@@黄灯等。@
+@日常交际@@介绍朋友说？@@This is my friend.；This is me.；I am friend.；You are my friend.@@This is...介绍他人。@
+@日常交际@@欢迎别人说？@@Welcome to my home.；Goodbye.；Sorry.；Thank you.@@Welcome表示欢迎。@
+@日常交际@@祝别人好运说？@@Good luck.；Good night.；Good morning.；Sorry.@@Good luck表示祝好运。@
+@日常交际@@祝贺别人说？@@Congratulations.；Sorry.；Goodbye.；Excuse me.@@Congratulations表示祝贺。@
+@日常交际@@安慰别人说？@@Don't worry.；Thank you.；Goodbye.；Happy birthday.@@Don't worry表示别担心。@
+@日常交际@@提醒别人小心说？@@Be careful.；Be happy.；Be quick.；Be quiet.@@Be careful表示小心。@
+@日常交际@@邀请别人说？@@Would you like to come?；What would you like?；How are you?；Where are you?@@Would you like to...?表示邀请。@
+@日常交际@@接受邀请说？@@Yes, I'd love to.；No, I can't.；Sorry.；Goodbye.@@Yes, I'd love to表示接受。@
+@日常交际@@拒绝邀请说？@@Sorry, I can't.；Yes, I'd love to.；Sure.；OK.@@Sorry, I can't表示委婉拒绝。@
+@日常交际@@请求进入说？@@May I come in?；May I come?；Can I come in?；Let me come in.@@May I come in?是礼貌请求。@
+@日常交际@@回答“可以，请进”说？@@Yes, please.；No, you can't.；Sorry.；Goodbye.@@Yes, please表示同意。@
+@日常交际@@回答“不可以”说？@@No, you can't.；Yes, please.；Sure.；OK.@@No, you can't表示不允许。@
+@日常交际@@问时间说？@@What time is it?；What day is it?；What's the date?；How old are you?@@What time问时间。@
+@日常交际@@问日期说？@@What's the date today?；What day is it today?；What time is it?；How is today?@@What's the date问日期。@
+@日常交际@@问星期说？@@What day is it today?；What's the date today?；What time is it?；What's this?@@What day问星期。@
+@日常交际@@问天气说？@@What's the weather like?；What day is it?；What time is it?；What colour is it?@@What's the weather like问天气。@
+@日常交际@@问颜色说？@@What colour is it?；What time is it?；What day is it?；How old is it?@@What colour问颜色。@
+@文化常识@@英语中“Good morning”用于？@@早上问候；晚上道别；道歉；感谢@@Good morning是早上问候。@
+@文化常识@@英语中“Good night”用于？@@晚上道别；早上问候；下午问候；感谢@@Good night是晚上道别或睡前。@
+@文化常识@@英语中“Sorry”用于？@@道歉；感谢；问候；告别@@Sorry表示道歉。@
+@文化常识@@英语中“Thank you”用于？@@感谢；道歉；问候；告别@@Thank you表示感谢。@
+@文化常识@@英语中“Goodbye”用于？@@告别；问候；感谢；道歉@@Goodbye表示再见。@
+@文化常识@@英语中“Please”用于？@@礼貌请求；道歉；告别；感谢@@Please表示请，用于礼貌请求。@
+@文化常识@@英语中“Excuse me”用于？@@打扰别人前；感谢；告别；道歉@@Excuse me用于礼貌打扰。@
+@文化常识@@英语中“Welcome”用于？@@欢迎；道歉；感谢；告别@@Welcome表示欢迎。@
+@文化常识@@英语中“Congratulations”用于？@@祝贺；道歉；感谢；告别@@Congratulations表示祝贺。@
+@文化常识@@英语中“Good luck”用于？@@祝好运；道歉；感谢；告别@@Good luck表示祝好运。@
+@文化常识@@英语中“Be careful”用于？@@提醒小心；感谢；道歉；问候@@Be careful表示小心。@
+@文化常识@@英语中“Don't worry”用于？@@安慰；感谢；道歉；问候@@Don't worry表示别担心。@
+@文化常识@@英语中“Me too”用于？@@表示我也是；道歉；感谢；告别@@Me too表示我也是。@
+@文化常识@@英语中“Pardon?”用于？@@请再说一遍；感谢；道歉；问候@@Pardon?表示请再说一遍。@
+@文化常识@@英语中“Here you are”用于？@@给你；感谢；道歉；问候@@Here you are表示给你。@
+@文化常识@@英语中“You're welcome”用于？@@回答感谢；道歉；问候；告别@@You're welcome表示不客气。@
+@文化常识@@英语中“That's all right”用于？@@回答道歉；感谢；问候；告别@@That's all right表示没关系。@
+@文化常识@@英语中“See you tomorrow”用于？@@明天见；今天见；晚上见；下午见@@See you tomorrow表示明天见。@
+@文化常识@@英语中“Have a nice day”用于？@@祝一天愉快；晚安；道歉；感谢@@Have a nice day表示祝你有美好的一天。@
+@文化常识@@英语中“Happy birthday”用于？@@生日祝福；新年祝福；圣诞祝福；道歉@@Happy birthday表示生日快乐。@
+@文化常识@@英语中“Merry Christmas”用于？@@圣诞祝福；生日祝福；新年祝福；道歉@@Merry Christmas表示圣诞快乐。@
+@文化常识@@英语中“Happy New Year”用于？@@新年祝福；生日祝福；圣诞祝福；道歉@@Happy New Year表示新年快乐。@
+@文化常识@@英语中“Good afternoon”用于？@@下午问候；早上问候；晚上问候；睡前道别@@Good afternoon是下午问候。@
+@文化常识@@英语中“Good evening”用于？@@晚上见面问候；早上问候；下午问候；睡前道别@@Good evening是晚上见面问候。@
+@文化常识@@英语中“Hi”常用于？@@熟人问候；道歉；感谢；告别@@Hi用于熟人之间问候。@
+@文化常识@@英语中“Hello”常用于？@@问候；道歉；感谢；告别@@Hello是问候语。@
+@文化常识@@英语中“How are you?”用于？@@问身体情况；问年龄；问名字；问地点@@How are you问对方好不好。@
+@文化常识@@英语中“How old are you?”用于？@@问年龄；问身体；问名字；问地点@@How old are you问年龄。@
+@文化常识@@英语中“What's your name?”用于？@@问名字；问年龄；问身体；问地点@@What's your name问名字。@
+@文化常识@@英语中“Where are you from?”用于？@@问来自哪里；问年龄；问名字；问身体@@Where are you from问来自哪里。@
+@文化常识@@英语中“What colour is it?”用于？@@问颜色；问时间；问星期；问年龄@@What colour问颜色。@
+@文化常识@@英语中“What time is it?”用于？@@问时间；问日期；问星期；问颜色@@What time问时间。@
+@文化常识@@英语中“What day is it today?”用于？@@问星期；问日期；问时间；问颜色@@What day问星期。@
+@文化常识@@英语中“What's the date today?”用于？@@问日期；问星期；问时间；问颜色@@What's the date问日期。@
+@文化常识@@英语中“What's the weather like?”用于？@@问天气；问日期；问时间；问颜色@@What's the weather like问天气。@
+@文化常识@@英语中“How much is it?”用于？@@问价格；问年龄；问时间；问颜色@@How much问价格。@
+@文化常识@@英语中“Can I help you?”用于？@@售货员招呼顾客；顾客请求帮助；问路；道歉@@Can I help you?是售货员用语。@
+@文化常识@@英语中“Can you help me?”用于？@@请求帮助；提供帮助；问路；道歉@@Can you help me?请求帮助。@
+@文化常识@@英语中“May I come in?”用于？@@请求进入；请求帮助；问路；道歉@@May I come in?请求进入。@
+@文化常识@@英语中“Sit down, please.”用于？@@请坐下；请起立；请安静；请出去@@Sit down表示坐下。@
+@文化常识@@英语中“Stand up, please.”用于？@@请起立；请坐下；请安静；请进来@@Stand up表示起立。@
+@文化常识@@英语中“Open your book, please.”用于？@@请打开书；请合上书；请读书；请写书@@Open your book表示打开书。@
+@文化常识@@英语中“Close the door, please.”用于？@@请关门；请开门；请擦门；请看门@@Close the door表示关门。@
+@文化常识@@英语中“Be quiet, please.”用于？@@请安静；请小心；请快些；请开心@@Be quiet表示安静。@
+@文化常识@@英语中“Look at the blackboard.”用于？@@看黑板；听黑板；擦黑板；写黑板@@Look at表示看……。@
+@文化常识@@英语中“Listen to me.”用于？@@听我说；看我；帮我；找我@@Listen to表示听……。@
+@文化常识@@英语中“It's time to go to school.”用于？@@该上学了；该回家了；该吃饭了；该睡觉了@@It's time to...表示该做某事了。@
+@文化常识@@英语中“It's time for lunch.”用于？@@该吃午饭了；该上学了；该回家了；该睡觉了@@It's time for lunch表示该吃午饭了。@
+@文化常识@@英语中“Let's play together.”用于？@@让我们一起玩；让我看看；让我帮你；让我们回家@@Let's表示让我们……。@
+@文化常识@@英语中“Don't be late.”用于？@@不要迟到；不要说话；不要跑步；不要担心@@Don't be late表示不要迟到。@
+@文化常识@@英语中“Please help me.”用于？@@请帮我；请帮我你；请看你；请听我@@help后接宾格me。@
+@文化常识@@英语中“Thank you very much.”用于？@@非常感谢；不用谢；对不起；再见@@Thank you very much表示非常感谢。@
+@文化常识@@英语中“Not at all.”用于？@@不用谢；非常感谢；对不起；再见@@Not at all可回答感谢。@
+@文化常识@@英语中“Come in, please.”用于？@@请进；请出；请坐；请站@@Come in表示请进。@
+@文化常识@@英语中“Go out, please.”用于？@@请出去；请进来；请坐下；请起立@@Go out表示出去。@
+@文化常识@@英语中“Pardon?”用于？@@请再说一遍；请进；请坐；请出去@@Pardon?表示请再说一遍。@
+@文化常识@@英语中“I don't know.”用于？@@我不知道；我知道；我喜欢；我不喜欢@@I don't know表示不知道。@
+@文化常识@@英语中“Me too.”用于？@@我也是；我不是；我喜欢；我不喜欢@@Me too表示我也是。@
+@文化常识@@英语中“Good luck.”用于？@@祝好运；晚安；早上好；对不起@@Good luck表示祝好运。@
+@文化常识@@英语中“Congratulations.”用于？@@祝贺；道歉；感谢；告别@@Congratulations表示祝贺。@
+@文化常识@@英语中“Don't worry.”用于？@@别担心；别迟到；别说话；别跑@@Don't worry表示别担心。@
+@文化常识@@英语中“Be careful.”用于？@@小心；安静；开心；快些@@Be careful表示小心。@
+@文化常识@@英语中“Would you like to come?”用于？@@邀请；道歉；感谢；告别@@Would you like to...?表示邀请。@
+@文化常识@@英语中“Yes, I'd love to.”用于？@@接受邀请；拒绝邀请；道歉；感谢@@Yes, I'd love to表示接受邀请。@
+@文化常识@@英语中“Sorry, I can't.”用于？@@拒绝邀请；接受邀请；道歉；感谢@@Sorry, I can't表示委婉拒绝。@
+@文化常识@@英语中“Here you are.”用于？@@给你；感谢；道歉；问候@@Here you are表示给你。@
+@文化常识@@英语中“You're welcome.”用于？@@回答感谢；回答道歉；问候；告别@@You're welcome表示不客气。@
+@文化常识@@英语中“That's all right.”用于？@@回答道歉；回答感谢；问候；告别@@That's all right表示没关系。@
+@文化常识@@英语中“See you tomorrow.”用于？@@明天见；今天见；晚上见；下午见@@See you tomorrow表示明天见。@
+@文化常识@@英语中“Have a nice day.”用于？@@祝一天愉快；晚安；道歉；感谢@@Have a nice day表示祝你有美好的一天。@
+@文化常识@@英语中“Happy birthday.”用于？@@生日祝福；新年祝福；圣诞祝福；道歉@@Happy birthday表示生日快乐。@
+@文化常识@@英语中“Merry Christmas.”用于？@@圣诞祝福；生日祝福；新年祝福；道歉@@Merry Christmas表示圣诞快乐。@
+@文化常识@@英语中“Happy New Year.”用于？@@新年祝福；生日祝福；圣诞祝福；道歉@@Happy New Year表示新年快乐。@
+@文化常识@@英语中“Good afternoon.”用于？@@下午问候；早上问候；晚上问候；睡前道别@@Good afternoon是下午问候。@
+@文化常识@@英语中“Good evening.”用于？@@晚上见面问候；早上问候；下午问候；睡前道别@@Good evening是晚上见面问候。@
+@文化常识@@英语中“Hi.”常用于？@@熟人问候；道歉；感谢；告别@@Hi用于熟人之间问候。@
+@文化常识@@英语中“Hello.”常用于？@@问候；道歉；感谢；告别@@Hello是问候语。@
+@文化常识@@英语中“How are you?”用于？@@问身体情况；问年龄；问名字；问地点@@How are you问对方好不好。@
+@文化常识@@英语中“How old are you?”用于？@@问年龄；问身体；问名字；问地点@@How old are you问年龄。@
+@文化常识@@英语中“What's your name?”用于？@@问名字；问年龄；问身体；问地点@@What's your name问名字。@
+@文化常识@@英语中“Where are you from?”用于？@@问来自哪里；问年龄；问名字；问身体@@Where are you from问来自哪里。@
+@文化常识@@英语中“What colour is it?”用于？@@问颜色；问时间；问星期；问年龄@@What colour问颜色。@
+@文化常识@@英语中“What time is it?”用于？@@问时间；问日期；问星期；问颜色@@What time问时间。@
+@文化常识@@英语中“What day is it today?”用于？@@问星期；问日期；问时间；问颜色@@What day问星期。@
+@文化常识@@英语中“What's the date today?”用于？@@问日期；问星期；问时间；问颜色@@What's the date问日期。@
+@文化常识@@英语中“What's the weather like?”用于？@@问天气；问日期；问时间；问颜色@@What's the weather like问天气。@
+@文化常识@@英语中“How much is it?”用于？@@问价格；问年龄；问时间；问颜色@@How much问价格。@
+@文化常识@@英语中“Can I help you?”用于？@@售货员招呼顾客；顾客请求帮助；问路；道歉@@Can I help you?是售货员用语。@
+@文化常识@@英语中“Can you help me?”用于？@@请求帮助；提供帮助；问路；道歉@@Can you help me?请求帮助。@
+@文化常识@@英语中“May I come in?”用于？@@请求进入；请求帮助；问路；道歉@@May I come in?请求进入。@
+@文化常识@@英语中“Sit down, please.”用于？@@请坐下；请起立；请安静；请出去@@Sit down表示坐下。@
+@文化常识@@英语中“Stand up, please.”用于？@@请起立；请坐下；请安静；请进来@@Stand up表示起立。@
+@文化常识@@英语中“Open your book, please.”用于？@@请打开书；请合上书；请读书；请写书@@Open your book表示打开书。@
+@文化常识@@英语中“Close the door, please.”用于？@@请关门；请开门；请擦门；请看门@@Close the door表示关门。@
+@文化常识@@英语中“Be quiet, please.”用于？@@请安静；请小心；请快些；请开心@@Be quiet表示安静。@
+@文化常识@@英语中“Look at the blackboard.”用于？@@看黑板；听黑板；擦黑板；写黑板@@Look at表示看……。@
+@文化常识@@英语中“Listen to me.”用于？@@听我说；看我；帮我；找我@@Listen to表示听……。@
+@文化常识@@英语中“It's time to go to school.”用于？@@该上学了；该回家了；该吃饭了；该睡觉了@@It's time to...表示该做某事了。@
+@文化常识@@英语中“It's time for lunch.”用于？@@该吃午饭了；该上学了；该回家了；该睡觉了@@It's time for lunch表示该吃午饭了。@
+@文化常识@@英语中“Let's play together.”用于？@@让我们一起玩；让我看看；让我帮你；让我们回家@@Let's表示让我们……。@
+@文化常识@@英语中“Don't be late.”用于？@@不要迟到；不要说话；不要跑步；不要担心@@Don't be late表示不要迟到。@
+@文化常识@@英语中“Please help me.”用于？@@请帮我；请帮我你；请看你；请听我@@help后接宾格me。@
+@文化常识@@英语中“Thank you very much.”用于？@@非常感谢；不用谢；对不起；再见@@Thank you very much表示非常感谢。@
+@文化常识@@英语中“Not at all.”用于？@@不用谢；非常感谢；对不起；再见@@Not at all可回答感谢。@
+@文化常识@@英语中“Come in, please.”用于？@@请进；请出；请坐；请站@@Come in表示请进。@
+@文化常识@@英语中“Go out, please.”用于？@@请出去；请进来；请坐下；请起立@@Go out表示出去。@
+@文化常识@@英语中“Pardon?”用于？@@请再说一遍；请进；请坐；请出去@@Pardon?表示请再说一遍。@
+@文化常识@@英语中“I don't know.”用于？@@我不知道；我知道；我喜欢；我不喜欢@@I don't know表示不知道。@
+@文化常识@@英语中“Me too.”用于？@@我也是；我不是；我喜欢；我不喜欢@@Me too表示我也是。@
+@文化常识@@英语中“Good luck.”用于？@@祝好运；晚安；早上好；对不起@@Good luck表示祝好运。@
+@文化常识@@英语中“Congratulations.”用于？@@祝贺；道歉；感谢；告别@@Congratulations表示祝贺。@
+@文化常识@@英语中“Don't worry.”用于？@@别担心；别迟到；别说话；别跑@@Don't worry表示别担心。@
+@文化常识@@英语中“Be careful.”用于？@@小心；安静；开心；快些@@Be careful表示小心。@
+@文化常识@@英语中“Would you like to come?”用于？@@邀请；道歉；感谢；告别@@Would you like to...?表示邀请。@
+@文化常识@@英语中“Yes, I'd love to.”用于？@@接受邀请；拒绝邀请；道歉；感谢@@Yes, I'd love to表示接受邀请。@
+@文化常识@@英语中“Sorry, I can't.”用于？@@拒绝邀请；接受邀请；道歉；感谢@@Sorry, I can't表示委婉拒绝。@
+@文化常识@@英语中“Here you are.”用于？@@给你；感谢；道歉；问候@@Here you are表示给你。@
+@文化常识@@英语中“You're welcome.”用于？@@回答感谢；回答道歉；问候；告别@@You're welcome表示不客气。@
+@文化常识@@英语中“That's all right.”用于？@@回答道歉；回答感谢；问候；告别@@That's all right表示没关系。@
+@文化常识@@英语中“See you tomorrow.”用于？@@明天见；今天见；晚上见；下午见@@See you tomorrow表示明天见。@
+@文化常识@@英语中“Have a nice day.”用于？@@祝一天愉快；晚安；道歉；感谢@@Have a nice day表示祝你有美好的一天。@
+@文化常识@@英语中“Happy birthday.”用于？@@生日祝福；新年祝福；圣诞祝福；道歉@@Happy birthday表示生日快乐。@
+@文化常识@@英语中“Merry Christmas.”用于？@@圣诞祝福；生日祝福；新年祝福；道歉@@Merry Christmas表示圣诞快乐。@
+@文化常识@@英语中“Happy New Year.”用于？@@新年祝福；生日祝福；圣诞祝福；道歉@@Happy New Year表示新年快乐。@
+@文化常识@@英语中“Good afternoon.”用于？@@下午问候；早上问候；晚上问候；睡前道别@@Good afternoon是下午问候。@
+@文化常识@@英语中“Good evening.”用于？@@晚上见面问候；早上问候；下午问候；睡前道别@@Good evening是晚上见面问候。@
+@文化常识@@英语中“Hi.”常用于？@@熟人问候；道歉；感谢；告别@@Hi用于熟人之间问候。@
+@文化常识@@英语中“Hello.”常用于？@@问候；道歉；感谢；告别@@Hello是问候语。@
+@文化常识@@英语中“How are you?”用于？@@问身体情况；问年龄；问名字；问地点@@How are you问对方好不好。@
+@文化常识@@英语中“How old are you?”用于？@@问年龄；问身体；问名字；问地点@@How old are you问年龄。@
+@文化常识@@英语中“What's your name?”用于？@@问名字；问年龄；问身体；问地点@@What's your name问名字。@
+@文化常识@@英语中“Where are you from?”用于？@@问来自哪里；问年龄；问名字；问身体@@Where are you from问来自哪里。@
+@文化常识@@英语中“What colour is it?”用于？@@问颜色；问时间；问星期；问年龄@@What colour问颜色。@
+@文化常识@@英语中“What time is it?”用于？@@问时间；问日期；问星期；问颜色@@What time问时间。@
+@文化常识@@英语中“What day is it today?”用于？@@问星期；问日期；问时间；问颜色@@What day问星期。@
+@文化常识@@英语中“What's the date today?”用于？@@问日期；问星期；问时间；问颜色@@What's the date问日期。@
+@文化常识@@英语中“What's the weather like?”用于？@@问天气；问日期；问时间；问颜色@@What's the weather like问天气。@
+@文化常识@@英语中“How much is it?”用于？@@问价格；问年龄；问时间；问颜色@@How much问价格。@
+@文化常识@@英语中“Can I help you?”用于？@@售货员招呼顾客；顾客请求帮助；问路；道歉@@Can I help you?是售货员用语。@
+@文化常识@@英语中“Can you help me?”用于？@@请求帮助；提供帮助；问路；道歉@@Can you help me?请求帮助。@
+@文化常识@@英语中“May I come in?”用于？@@请求进入；请求帮助；问路；道歉@@May I come in?请求进入。@
+@文化常识@@英语中“Sit down, please.”用于？@@请坐下；请起立；请安静；请出去@@Sit down表示坐下。@
+@文化常识@@英语中“Stand up, please.”用于？@@请起立；请坐下；请安静；请进来@@Stand up表示起立。@
+@文化常识@@英语中“Open your book, please.”用于？@@请打开书；请合上书；请读书；请写书@@Open your book表示打开书。@
+@文化常识@@英语中“Close the door, please.”用于？@@请关门；请开门；请擦门；请看门@@Close the door表示关门。@
+@文化常识@@英语中“Be quiet, please.”用于？@@请安静；请小心；请快些；请开心@@Be quiet表示安静。@
+@文化常识@@英语中“Look at the blackboard.”用于？@@看黑板；听黑板；擦黑板；写黑板@@Look at表示看……。@
+@文化常识@@英语中“Listen to me.”用于？@@听我说；看我；帮我；找我@@Listen to表示听……。@
+@文化常识@@英语中“It's time to go to school.”用于？@@该上学了；该回家了；该吃饭了；该睡觉了@@It's time to...表示该做某事了。@
+@文化常识@@英语中“It's time for lunch.”用于？@@该吃午饭了；该上学了；该回家了；该睡觉了@@It's time for lunch表示该吃午饭了。@
+@文化常识@@英语中“Let's play together.”用于？@@让我们一起玩；让我看看；让我帮你；让我们回家@@Let's表示让我们……。@
+@文化常识@@英语中“Don't be late.”用于？@@不要迟到；不要说话；不要跑步；不要担心@@Don't be late表示不要迟到。@
+@文化常识@@英语中“Please help me.”用于？@@请帮我；请帮我你；请看你；请听我@@help后接宾格me。@
+@文化常识@@英语中“Thank you very much.”用于？@@非常感谢；不用谢；对不起；再见@@Thank you very much表示非常感谢。@
+@文化常识@@英语中“Not at all.”用于？@@不用谢；非常感谢；对不起；再见@@Not at all可回答感谢。@
+@文化常识@@英语中“Come in, please.”用于？@@请进；请出；请坐；请站@@Come in表示请进。@
+@文化常识@@英语中“Go out, please.”用于？@@请出去；请进来；请坐下；请起立@@Go out表示出去。@
+@文化常识@@英语中“Pardon?”用于？@@请再说一遍；请进；请坐；请出去@@Pardon?表示请再说一遍。@
+@文化常识@@英语中“I don't know.”用于？@@我不知道；我知道；我喜欢；我不喜欢@@I don't know表示不知道。@
+@文化常识@@英语中“Me too.”用于？@@我也是；我不是；我喜欢；我不喜欢@@Me too表示我也是。@
+@文化常识@@英语中“Good luck.”用于？@@祝好运；晚安；早上好；对不起@@Good luck表示祝好运。@
+@文化常识@@英语中“Congratulations.”用于？@@祝贺；道歉；感谢；告别@@Congratulations表示祝贺。@
+@文化常识@@英语中“Don't worry.”用于？@@别担心；别迟到；别说话；别跑@@Don't worry表示别担心。@
+@文化常识@@英语中“Be careful.”用于？@@小心；安静；开心；快些@@Be careful表示小心。@
+@文化常识@@英语中“Would you like to come?”用于？@@邀请；道歉；感谢；告别@@Would you like to...?表示邀请。@
+@文化常识@@英语中“Yes, I'd love to.”用于？@@接受邀请；拒绝邀请；道歉；感谢@@Yes, I'd love to表示接受邀请。@
+@文化常识@@英语中“Sorry, I can't.”用于？@@拒绝邀请；接受邀请；道歉；感谢@@Sorry, I can't表示委婉拒绝。@
+@文化常识@@英语中“Here you are.”用于？@@给你；感谢；道歉；问候@@Here you are表示给你。@
+@文化常识@@英语中“You're welcome.”用于？@@回答感谢；回答道歉；问候；告别@@You're welcome表示不客气。@
+@文化常识@@英语中“That's all right.”用于？@@回答道歉；回答感谢；问候；告别@@That's all right表示没关系。@
+@文化常识@@英语中“See you tomorrow.”用于？@@明天见；今天见；晚上见；下午见@@See you tomorrow表示明天见。@
+@文化常识@@英语中“Have a nice day.”用于？@@祝一天愉快；晚安；道歉；感谢@@Have a nice day表示祝你有美好的一天。@
+@文化常识@@英语中“Happy birthday.”用于？@@生日祝福；新年祝福；圣诞祝福；道歉@@Happy birthday表示生日快乐。@
+@文化常识@@英语中“Merry Christmas.”用于？@@圣诞祝福；生日祝福；新年祝福；道歉@@Merry Christmas表示圣诞快乐。@
+@文化常识@@英语中“Happy New Year.”用于？@@新年祝福；生日祝福；圣诞祝福；道歉@@Happy New Year表示新年快乐。@
+@文化常识@@英语中“Good afternoon.”用于？@@下午问候；早上问候；晚上问候；睡前道别@@Good afternoon是下午问候。@
+@文化常识@@英语中“Good evening.”用于？@@晚上见面问候；早上问候；下午问候；睡前道别@@Good evening是晚上见面问候。@
+@文化常识@@英语中“Hi.”常用于？@@熟人问候；道歉；感谢；告别@@Hi用于熟人之间问候。@
+@文化常识@@英语中“Hello.”常用于？@@问候；道歉；感谢；告别@@Hello是问候语。@
+@文化常识@@英语中“How are you?”用于？@@问身体情况；问年龄；问名字；问地点@@How are you问对方好不好。@
+@文化常识@@英语中“How old are you?”用于？@@问年龄；问身体；问名字；问地点@@How old are you问年龄。@
+@文化常识@@英语中“What's your name?”用于？@@问名字；问年龄；问身体；问地点@@What's your name问名字。@
+@文化常识@@英语中“Where are you from?”用于？@@问来自哪里；问年龄；问名字；问身体@@Where are you from问来自哪里。@
+@文化常识@@英语中“What colour is it?”用于？@@问颜色；问时间；问星期；问年龄@@What colour问颜色。@
+@文化常识@@英语中“What time is it?”用于？@@问时间；问日期；问星期；问颜色@@What time问时间。@
+@文化常识@@英语中“What day is it today?”用于？@@问星期；问日期；问时间；问颜色@@What day问星期。@
+@文化常识@@英语中“What's the date today?”用于？@@问日期；问星期；问时间；问颜色@@What's the date问日期。@
+@文化常识@@英语中“What's the weather like?”用于？@@问天气；问日期；问时间；问颜色@@What's the weather like问天气。@
+@文化常识@@英语中“How much is it?”用于？@@问价格；问年龄；问时间；问颜色@@How much问价格。@

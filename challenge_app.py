@@ -172,12 +172,12 @@ def fetch_questions(table):
     显示顺序随机打乱，避免正确答案固定出现在第一位。
     """
     sql = (
-        f"SELECT id, question, option FROM {table} "
+        f"SELECT id, question, option, explain FROM {table} "
         f"WHERE continue_pass_count < ? ORDER BY RANDOM() LIMIT ?"
     )
     questions = []
     with sqlite3.connect(DB_PATH) as conn:
-        for qid, question, option in conn.execute(sql, (PASS_LIMIT, QUESTION_COUNT)):
+        for qid, question, option, explain in conn.execute(sql, (PASS_LIMIT, QUESTION_COUNT)):
             options = [o.strip() for o in str(option).replace("；", ";").split(";") if o.strip()]
             if len(options) < 2:
                 continue
@@ -188,6 +188,7 @@ def fetch_questions(table):
                     "question": question,
                     "answer": options[0],
                     "options": random.sample(options, k=len(options)),
+                    "explain": explain or "",
                 }
             )
     return questions
@@ -197,13 +198,13 @@ def fetch_mixed_questions():
     """综合挑战：从 4 张表各取 QUESTION_COUNT // 4 道题，合并后随机排序。"""
     per_table = max(QUESTION_COUNT // len(CHALLENGES), 1)
     sql = (
-        f"SELECT id, question, option FROM {{}} "
+        f"SELECT id, question, option, explain FROM {{}} "
         f"WHERE continue_pass_count < ? ORDER BY RANDOM() LIMIT ?"
     )
     questions = []
     with sqlite3.connect(DB_PATH) as conn:
         for _, table in CHALLENGES:
-            for qid, question, option in conn.execute(
+            for qid, question, option, explain in conn.execute(
                 sql.format(table), (PASS_LIMIT, per_table)
             ):
                 options = [o.strip() for o in str(option).replace("；", ";").split(";") if o.strip()]
@@ -216,6 +217,7 @@ def fetch_mixed_questions():
                         "question": question,
                         "answer": options[0],
                         "options": random.sample(options, k=len(options)),
+                        "explain": explain or "",
                     }
                 )
     random.shuffle(questions)
@@ -291,6 +293,7 @@ def init_db():
                         type TEXT,
                         question TEXT,
                         option TEXT,
+                        explain TEXT,
                         continue_pass_count INTEGER DEFAULT 0,
                         answer_count INTEGER DEFAULT 0,
                         create_time TEXT,
@@ -305,12 +308,81 @@ def init_db():
 
 
 def ensure_answer_count_column():
-    """为 4 张表补齐 answer_count（答题次数）字段，兼容已有的旧库文件。"""
+    """为 4 张表补齐 answer_count 和 explain 字段，兼容已有的旧库文件。"""
     with sqlite3.connect(DB_PATH) as conn:
         for _, table in CHALLENGES:
             cols = {row[1] for row in conn.execute(f"PRAGMA table_info({table})")}
-            if cols and "answer_count" not in cols:
+            if not cols:
+                continue
+            if "answer_count" not in cols:
                 conn.execute(f"ALTER TABLE {table} ADD COLUMN answer_count INTEGER DEFAULT 0")
+            if "explain" not in cols:
+                conn.execute(f"ALTER TABLE {table} ADD COLUMN explain TEXT")
+
+
+class DataImporter:
+    """从 mitchell 文件夹读取源数据文件，按行解析后插入数据库对应表。
+
+    文件格式：每行用 @@ 分隔为 4 个字段：类型、题目、选项、解析。
+    选项之间用 ；（中文分号）分隔，第一个选项为正确答案。
+    """
+
+    # 文件名 → 数据表名
+    FILE_TABLE_MAP = {
+        "math_knowlege.txt": "tbl_math",
+        "literal_knowlege.txt": "tbl_literal",
+        "english_knowlege.txt": "tbl_english",
+        "science_knowlege.txt": "tbl_science",
+    }
+
+    def __init__(self, mitchell_dir):
+        self.mitchell_dir = mitchell_dir
+
+    def _parse_line(self, line):
+        """解析单行，返回 (type, question, option_str, explain) 或 None。"""
+        line = line.strip()
+        if not line:
+            return None
+        # 每行以 @ 开头、@ 结尾，字段之间用 @@ 分隔
+        parts = [p.strip().strip("@") for p in line.split("@@")]
+        if len(parts) < 3:
+            return None
+        qtype, question, options = parts[0], parts[1], parts[2]
+        explain = parts[3] if len(parts) >= 4 else ""
+        # 规范化选项分隔符为英文分号
+        options = options.replace("；", ";")
+        return qtype, question, options, explain
+
+    def import_all(self):
+        """读取所有文件并插入数据库，返回 (总数, 各表计数)。"""
+        now = _now()
+        total = 0
+        per_table = {}
+        with sqlite3.connect(DB_PATH) as conn:
+            for filename, table in self.FILE_TABLE_MAP.items():
+                filepath = os.path.join(self.mitchell_dir, filename)
+                if not os.path.exists(filepath):
+                    continue
+                count = 0
+                with open(filepath, "r", encoding="utf-8") as f:
+                    rows = []
+                    for line in f:
+                        parsed = self._parse_line(line)
+                        if parsed is None:
+                            continue
+                        qtype, question, options, explain = parsed
+                        rows.append((qtype, question, options, explain, 0, now, now))
+                        count += 1
+                    if rows:
+                        conn.executemany(
+                            f"INSERT INTO {table} (type, question, option, explain, "
+                            f"continue_pass_count, create_time, update_time) "
+                            f"VALUES (?, ?, ?, ?, ?, ?, ?)",
+                            rows,
+                        )
+                per_table[table] = count
+                total += count
+        return total, per_table
 
 
 class RoundPlayButton(wx.Panel):
@@ -493,7 +565,8 @@ class ChallengePanel(wx.Panel):
         self.last_click_time = now
         is_correct = selected == q["answer"]
         self.records.append(
-            {"question": q["question"], "chosen": selected, "answer": q["answer"], "correct": is_correct}
+            {"question": q["question"], "chosen": selected, "answer": q["answer"],
+             "correct": is_correct, "explain": q.get("explain", "")}
         )
         update_question_stats(q["table"], q["id"], is_correct)
 
@@ -512,6 +585,7 @@ class ResultPanel(wx.Panel):
         total = len(records)
         correct = sum(1 for r in records if r["correct"])
         rate = correct / total if total else 0.0
+        self._challenge_info = {"label": label, "rate": rate}
 
         sizer = wx.BoxSizer(wx.VERTICAL)
         title = wx.StaticText(self, label=f"{label} 答题结束")
@@ -526,7 +600,10 @@ class ResultPanel(wx.Panel):
             tip = wx.StaticText(self, label=tier[2])
             sizer.Add(tip, 0, wx.ALIGN_CENTER | wx.TOP, 12)
             reward_btn = wx.Button(self, label="领取奖励")
-            reward_btn.Bind(wx.EVT_BUTTON, lambda evt: self.GetParent().show_reward(tier[1]))
+            reward_btn.Bind(
+                wx.EVT_BUTTON,
+                lambda evt: self.GetParent().show_reward(tier[1], self._challenge_info),
+            )
             sizer.Add(reward_btn, 0, wx.ALIGN_CENTER | wx.TOP, 12)
         else:
             tip = wx.StaticText(self, label="离奖励还差一点点，加油哦！")
@@ -588,6 +665,16 @@ class ResultPanel(wx.Panel):
             ans.SetForegroundColour(status_colour)
         sizer.Add(ans, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 12)
 
+        # 错题显示解析
+        if not r["correct"] and r.get("explain"):
+            exp_text = wx.StaticText(card, label=f"解析：{r['explain']}")
+            exp_font = exp_text.GetFont()
+            exp_font.PointSize += 2
+            exp_text.SetFont(exp_font)
+            exp_text.SetForegroundColour(wx.Colour(80, 80, 80))
+            exp_text.Wrap(wrap_w)
+            sizer.Add(exp_text, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 12)
+
         card.SetSizer(sizer)
         return card
 
@@ -595,9 +682,10 @@ class ResultPanel(wx.Panel):
 class RewardPanel(wx.Panel):
     """奖励兑换页：下拉选择 + 兑换按钮，按正确率档位执行对应启动指令。"""
 
-    def __init__(self, parent, tier_key):
+    def __init__(self, parent, tier_key, challenge_info=None):
         super().__init__(parent)
         self.tier_key = tier_key
+        self.challenge_info = challenge_info or {}
         sizer = wx.BoxSizer(wx.VERTICAL)
         title = wx.StaticText(self, label="恭喜你，挑战成功！")
         _title_font(title, 6)
@@ -627,16 +715,29 @@ class RewardPanel(wx.Panel):
             return
         reward = self.choice.GetString(sel)
         cmd = LAUNCH_COMMANDS.get(self.tier_key, "")
+        # 构建挑战信息摘要
+        info = self.challenge_info
+        label = info.get("label", "")
+        rate = info.get("rate")
+        rate_str = f"{rate:.0%}" if rate is not None else "未知"
+        time_str = _now()
+        summary = (
+            f"挑战类型：{label}\n"
+            f"完成时间：{time_str}\n"
+            f"正确率：{rate_str}\n"
+        )
         if not cmd:
-            # 启动指令待定：先提示兑换成功
             wx.MessageBox(
-                f"兑换成功：「{reward}」\n（「{self.tier_key}」档位的启动指令待配置）",
+                f"兑换成功：「{reward}」\n（「{self.tier_key}」档位的启动指令待配置）\n\n{summary}",
                 "提示", wx.ICON_INFORMATION,
             )
             return
         try:
             subprocess.Popen(cmd, shell=True)
-            wx.MessageBox(f"兑换成功：「{reward}」已启动", "提示", wx.ICON_INFORMATION)
+            wx.MessageBox(
+                f"兑换成功：「{reward}」已启动\n\n{summary}",
+                "提示", wx.ICON_INFORMATION,
+            )
         except OSError as e:
             wx.MessageBox(f"启动失败：{e}", "错误", wx.ICON_ERROR)
 
@@ -721,18 +822,29 @@ class MainFrame(wx.Frame):
         self.SetTitle(f"挑战答题 - {label} 结果")
         self._swap(ResultPanel(self, label, records, tier))
 
-    def show_reward(self, tier_key):
+    def show_reward(self, tier_key, challenge_info=None):
         self.SetTitle("挑战答题 - 领取奖励")
-        self._swap(RewardPanel(self, tier_key))
+        self._swap(RewardPanel(self, tier_key, challenge_info))
 
 
 def main():
+    db_is_new = not os.path.exists(DB_PATH)
     init_db()
     ensure_answer_count_column()
+    # 仅在新建数据库时从 mitchell 文件夹导入题目
+    if db_is_new:
+        mitchell_dir = os.path.join(BASE_DIR, "mitchell")
+        if not os.path.isdir(mitchell_dir):
+            mitchell_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mitchell")
+        if os.path.isdir(mitchell_dir):
+            importer = DataImporter(mitchell_dir)
+            total, per_table = importer.import_all()
+            if total > 0:
+                print(f"从 mitchell 导入 {total} 道题目: {per_table}")
     app = wx.App(False)
     frame = MainFrame()
     frame.Show()
-    frame.ShowFullScreen(True)   # 启动即全屏，F11 可切换
+    frame.ShowFullScreen(False)   # 启动即全屏，F11 可切换
     app.MainLoop()
 
 
