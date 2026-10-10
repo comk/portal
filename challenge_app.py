@@ -31,7 +31,14 @@ import time
 import wx
 
 # ----------------------------- 配置 -----------------------------
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# macOS 打包为 .app 后，bundle 内部只读，数据文件需放到用户目录下
+if platform.system() == "Darwin" and ".app/Contents/Resources" in os.path.abspath(__file__):
+    _DATA_DIR = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "ChallengeApp")
+else:
+    _DATA_DIR = os.path.dirname(os.path.abspath(__file__))
+os.makedirs(_DATA_DIR, exist_ok=True)
+
+BASE_DIR = _DATA_DIR
 DB_PATH = os.path.join(BASE_DIR, "challenge.db")     # sqlite 数据库文件
 LOG_PATH = os.path.join(BASE_DIR, "click_log.txt")   # 点击记录日志文件
 QUESTION_COUNT = 20    # 每次答题数量
