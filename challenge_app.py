@@ -10,14 +10,19 @@
    （筛选条件 continue_pass_count < 3）。
 4. 逐题作答，不可返回上一题；全部答完显示正确率与明细列表，并向日志
    文件追加一条答题结果记录（点击类型 + 答题数量 + 正确率 + 获奖情况）。
-5. 正确率超过 80% 显示「领取奖励」按钮，并按档位（<85% / <90% / <95% /
+5. 正确率超过 80% 显示「去抽奖」按钮，并按档位（<85% / <90% / <95% /
    <100% / =100%）显示不同的鼓励语；否则提示鼓励语。
-6. 奖励页包含下拉选择框与兑换按钮，兑换时按正确率档位执行对应的
-   启动指令（LAUNCH_COMMANDS 待定，先留空并给出提示）。
-7. 每答一次题，对应题目的 answer_count（答题次数）加 1。
-8. 应用启动即为全屏（按 F11 可切换），全局字号放大 1 倍。
-9. 点击"下一题/交卷"按钮的时间间隔必须超过 5 秒才跳转。
-10. 两次挑战之间的间隔须超过 30 分钟，冷却中点击会提示剩余等待时间。
+6. 抽奖页点击「抽 奖」按钮，按 luck_draw_items.rate 权重随机抽取一件物品，
+   记入个人物品表 my_items；首页「我的物品」入口可查看已获得的物品，
+   并按合成配方合成更高级的物品（数量不足时提示还差多少个可合成什么）。
+7. 「我的物品」页只展示未消耗物品，可点击「去使用」弹窗选择消耗数量并显示
+   总分值，确认后执行 USE_ITEM_COMMAND + 总 point 分值，同时写入消耗历史表
+   consume_history；点击「消耗历史」按钮进入单独页面，按时间倒序展示物品
+   名称、数量、分值与消耗时间。
+8. 每答一次题，对应题目的 answer_count（答题次数）加 1。
+9. 应用启动即为全屏（按 F11 可切换），全局字号放大 1 倍。
+10. 点击"下一题/交卷"按钮的时间间隔必须超过 5 秒才跳转。
+11. 两次挑战之间的间隔须超过 30 分钟，冷却中点击会提示剩余等待时间。
 """
 
 import datetime
@@ -60,15 +65,21 @@ REWARD_TIERS = [
     (1.00, "100%", "满分！你太棒了，名副其实的答题小达人！"),
 ]
 
-# 各档位兑换后执行的启动指令（待定），配置后点击兑换即启动对应应用，例如:
-# LAUNCH_COMMANDS["100%"] = r"C:\SomeApp\start.exe"
-LAUNCH_COMMANDS = {
-    "80%~85%": "",
-    "85%~90%": "",
-    "90%~95%": "",
-    "95%~100%": "",
-    "100%": "",
-}
+# 抽奖物品种子数据: (名称, 图片, 分值, 概率, 合成源名称, 合成所需数量)
+# rate 概率之和须为 1；合成源名称须在本列表中出现于该项之前。
+# 例：集齐 3 个「铁矿石」可合成 1 把「铁剑」。
+DRAW_ITEMS_SEED = [
+    ("铁矿石", "", 5, 0.35, None, 0),
+    ("银矿石", "", 10, 0.25, None, 0),
+    ("金矿石", "", 20, 0.15, None, 0),
+    ("铁剑", "", 30, 0.10, "铁矿石", 3),
+    ("银剑", "", 60, 0.10, "银矿石", 3),
+    ("金剑", "", 120, 0.05, "金矿石", 3),
+]
+
+# 「去使用」物品时执行的启动命令；运行时以「命令 + 总point分值」形式调用，例如:
+# USE_ITEM_COMMAND = r"C:\SomeApp\start.exe"
+USE_ITEM_COMMAND = ""
 
 # 挑战类型: (按钮文字, 数据表名)
 CHALLENGES = [
@@ -82,8 +93,6 @@ CHALLENGES = [
 MIXED_TABLE = "mixed"
 MIXED_LABEL = "综合挑战"
 
-REWARD_OPTIONS = ["选项1", "选项2", "选项3", "选项4"]
-
 
 # ----------------------------- 工具 -----------------------------
 def _now():
@@ -94,6 +103,23 @@ def _title_font(ctrl, delta=4):
     font = ctrl.GetFont()
     font.PointSize += delta
     ctrl.SetFont(font.Bold())
+
+
+def _load_item_bitmap(image, size=48):
+    """尝试从物品 image 字段加载图片并缩放为 size×size，失败或无图返回 None。"""
+    if not image:
+        return None
+    path = image if os.path.isabs(image) else os.path.join(BASE_DIR, image)
+    if not os.path.exists(path):
+        return None
+    try:
+        img = wx.Image(path, wx.BITMAP_TYPE_ANY)
+        if not img.IsOk():
+            return None
+        img = img.Scale(size, size, wx.IMAGE_QUALITY_HIGH)
+        return wx.Bitmap(img)
+    except Exception:
+        return None
 
 
 def write_click_log(click_type):
@@ -237,6 +263,194 @@ def update_question_stats(table, qid, is_correct):
             f"answer_count = answer_count + 1, update_time = ? WHERE id = ?",
             (_now(), qid),
         )
+
+
+# ----------------------------- 抽奖 / 物品 -----------------------------
+def init_lottery_tables():
+    """创建抽奖物品表与个人物品表，并在抽奖物品表为空时写入种子数据。
+
+    表结构：
+      luck_draw_items(id, name, image, point, rate, merge_source_id, merge_count)
+      my_items(id, name, count)
+      consume_history(id, name, count, point, consume_time)
+    """
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.execute(
+            """CREATE TABLE IF NOT EXISTS luck_draw_items (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT,
+                    image TEXT,
+                    point INTEGER DEFAULT 0,
+                    rate REAL DEFAULT 0,
+                    merge_source_id INTEGER,
+                    merge_count INTEGER DEFAULT 0
+                )"""
+        )
+        conn.execute(
+            """CREATE TABLE IF NOT EXISTS my_items (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT UNIQUE,
+                    count INTEGER DEFAULT 0
+                )"""
+        )
+        conn.execute(
+            """CREATE TABLE IF NOT EXISTS consume_history (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT,
+                    count INTEGER DEFAULT 0,
+                    point INTEGER DEFAULT 0,
+                    consume_time TEXT
+                )"""
+        )
+        # 兼容旧库：移除已废弃的 consume / consume_time 字段
+        old_cols = {row[1] for row in conn.execute("PRAGMA table_info(my_items)")}
+        for col in ("consume", "consume_time"):
+            if col in old_cols:
+                try:
+                    conn.execute(f"ALTER TABLE my_items DROP COLUMN {col}")
+                except sqlite3.OperationalError:
+                    pass   # 旧版本 sqlite 不支持 DROP COLUMN 时忽略
+        if not conn.execute("SELECT COUNT(*) FROM luck_draw_items").fetchone()[0]:
+            name_to_id = {}
+            for name, image, point, rate, source_name, merge_count in DRAW_ITEMS_SEED:
+                source_id = name_to_id.get(source_name) if source_name else None
+                cur = conn.execute(
+                    "INSERT INTO luck_draw_items "
+                    "(name, image, point, rate, merge_source_id, merge_count) "
+                    "VALUES (?, ?, ?, ?, ?, ?)",
+                    (name, image, point, rate, source_id, merge_count),
+                )
+                name_to_id[name] = cur.lastrowid
+
+
+def draw_luck_item():
+    """按 rate 权重随机抽取一件物品，计入 my_items，返回 (name, image, point)。"""
+    with sqlite3.connect(DB_PATH) as conn:
+        rows = list(conn.execute(
+            "SELECT name, image, point, rate FROM luck_draw_items WHERE rate > 0"
+        ))
+        if not rows:
+            return None
+        total = sum(r[3] for r in rows)
+        pick = random.uniform(0, total)
+        acc = 0.0
+        chosen = rows[-1]
+        for r in rows:
+            acc += r[3]
+            if pick <= acc:
+                chosen = r
+                break
+        name, image, point, _ = chosen
+        if conn.execute("SELECT 1 FROM my_items WHERE name = ?", (name,)).fetchone():
+            conn.execute("UPDATE my_items SET count = count + 1 WHERE name = ?", (name,))
+        else:
+            conn.execute("INSERT INTO my_items (name, count) VALUES (?, 1)", (name,))
+    return name, image, point
+
+
+def fetch_my_items():
+    """返回未消耗的个人物品列表 [(id, name, count), ...]（count 即未消耗数量）。"""
+    with sqlite3.connect(DB_PATH) as conn:
+        return list(conn.execute(
+            "SELECT id, name, count FROM my_items WHERE count > 0 ORDER BY id"
+        ))
+
+
+def consume_item(name, quantity):
+    """消耗 quantity 个物品，并写入一条消耗历史记录。
+
+    count 表示未消耗数量，减到 0 时删除该行。返回 (是否成功, 提示文本)。
+    """
+    with sqlite3.connect(DB_PATH) as conn:
+        row = conn.execute(
+            "SELECT id, count FROM my_items WHERE name = ?", (name,)
+        ).fetchone()
+        if not row:
+            return False, "物品不存在"
+        item_id, have = row
+        if quantity > have:
+            return False, f"库存不足，当前仅 {have} 个"
+        now = _now()
+        left = have - quantity
+        if left <= 0:
+            conn.execute("DELETE FROM my_items WHERE id = ?", (item_id,))
+        else:
+            conn.execute("UPDATE my_items SET count = ? WHERE id = ?", (left, item_id))
+        # 记录消耗历史（point 为本次消耗的总分值）
+        point_row = conn.execute(
+            "SELECT point FROM luck_draw_items WHERE name = ? LIMIT 1", (name,)
+        ).fetchone()
+        unit_point = point_row[0] if point_row else 0
+        conn.execute(
+            "INSERT INTO consume_history (name, count, point, consume_time) VALUES (?, ?, ?, ?)",
+            (name, quantity, quantity * unit_point, now),
+        )
+    return True, f"已消耗 {quantity} 个「{name}」"
+
+
+def fetch_consume_history():
+    """返回消耗历史列表 [(id, name, count, point, consume_time), ...]（按时间倒序）。"""
+    with sqlite3.connect(DB_PATH) as conn:
+        return list(conn.execute(
+            "SELECT id, name, count, point, consume_time FROM consume_history "
+            "ORDER BY id DESC"
+        ))
+
+
+def get_luck_item_by_name(name):
+    """按名称返回抽奖物品定义 dict（含 id/point/merge 信息），不存在返回 None。"""
+    with sqlite3.connect(DB_PATH) as conn:
+        row = conn.execute(
+            "SELECT id, name, image, point, rate, merge_source_id, merge_count "
+            "FROM luck_draw_items WHERE name = ? LIMIT 1", (name,)
+        ).fetchone()
+    if not row:
+        return None
+    return {
+        "id": row[0], "name": row[1], "image": row[2], "point": row[3],
+        "rate": row[4], "merge_source_id": row[5], "merge_count": row[6],
+    }
+
+
+def get_merge_target(source_luck_id):
+    """查询以 source_luck_id 为合成源的物品，返回 (目标名称, 所需数量) 或 None。"""
+    with sqlite3.connect(DB_PATH) as conn:
+        row = conn.execute(
+            "SELECT name, merge_count FROM luck_draw_items "
+            "WHERE merge_source_id = ? AND merge_count > 0 LIMIT 1", (source_luck_id,)
+        ).fetchone()
+    return (row[0], row[1]) if row else None
+
+
+def merge_item(source_name):
+    """消耗 merge_count 个 source_name 物品，合成 1 个目标物品。
+
+    返回 (是否成功, 提示文本)；数量不足时返回还差多少个可合成什么。
+    """
+    luck = get_luck_item_by_name(source_name)
+    target = get_merge_target(luck["id"]) if luck else None
+    if not target:
+        return False, "该物品暂不支持合成"
+    target_name, need = target
+    with sqlite3.connect(DB_PATH) as conn:
+        owned = conn.execute(
+            "SELECT count FROM my_items WHERE name = ?", (source_name,)
+        ).fetchone()
+        have = owned[0] if owned else 0
+        if have < need:
+            return False, f"数量不足，还差 {need - have} 个可合成「{target_name}」"
+        # 扣减源物品；用光则删除该行
+        left = have - need
+        if left <= 0:
+            conn.execute("DELETE FROM my_items WHERE name = ?", (source_name,))
+        else:
+            conn.execute("UPDATE my_items SET count = ? WHERE name = ?", (left, source_name))
+        # 增加目标物品数量
+        if conn.execute("SELECT 1 FROM my_items WHERE name = ?", (target_name,)).fetchone():
+            conn.execute("UPDATE my_items SET count = count + 1 WHERE name = ?", (target_name,))
+        else:
+            conn.execute("INSERT INTO my_items (name, count) VALUES (?, 1)", (target_name,))
+    return True, f"合成成功：「{target_name}」×1"
 
 
 # --------------------- 首次运行生成示例数据库 ---------------------
@@ -433,7 +647,7 @@ class RoundPlayButton(wx.Panel):
 
 # ----------------------------- 页面 -----------------------------
 class StartPanel(wx.Panel):
-    """首页：5 个挑战入口按钮（数学/语文/英语/科学/综合）。"""
+    """首页：挑战入口按钮（数学/语文/英语/科学/综合）+「我的物品」入口。"""
 
     def __init__(self, parent):
         super().__init__(parent)
@@ -449,6 +663,10 @@ class StartPanel(wx.Panel):
             btn.SetMinSize((180, 70))
             btn.Bind(wx.EVT_BUTTON, lambda evt, l=label, t=table: self.GetParent().show_challenge(l, t))
             grid.Add(btn, 0, wx.EXPAND)
+        items_btn = wx.Button(self, label="我的物品")
+        items_btn.SetMinSize((180, 70))
+        items_btn.Bind(wx.EVT_BUTTON, lambda evt: self.GetParent().show_my_items())
+        grid.Add(items_btn, 0, wx.EXPAND)
         sizer.Add(grid, 0, wx.ALIGN_CENTER | wx.TOP, 40)
         self.SetSizer(sizer)
 
@@ -599,10 +817,10 @@ class ResultPanel(wx.Panel):
             # 获得奖励：按档位显示对应的鼓励语
             tip = wx.StaticText(self, label=tier[2])
             sizer.Add(tip, 0, wx.ALIGN_CENTER | wx.TOP, 12)
-            reward_btn = wx.Button(self, label="领取奖励")
+            reward_btn = wx.Button(self, label="去抽奖")
             reward_btn.Bind(
                 wx.EVT_BUTTON,
-                lambda evt: self.GetParent().show_reward(tier[1], self._challenge_info),
+                lambda evt: self.GetParent().show_lottery(tier[1], self._challenge_info),
             )
             sizer.Add(reward_btn, 0, wx.ALIGN_CENTER | wx.TOP, 12)
         else:
@@ -679,67 +897,262 @@ class ResultPanel(wx.Panel):
         return card
 
 
-class RewardPanel(wx.Panel):
-    """奖励兑换页：下拉选择 + 兑换按钮，按正确率档位执行对应启动指令。"""
+class LotteryPanel(wx.Panel):
+    """抽奖页：点击「抽 奖」按物品 rate 权重随机抽取一件物品，记入「我的物品」。"""
 
     def __init__(self, parent, tier_key, challenge_info=None):
         super().__init__(parent)
         self.tier_key = tier_key
         self.challenge_info = challenge_info or {}
+        self._drawn = False   # 每次挑战只能抽奖一次
+
         sizer = wx.BoxSizer(wx.VERTICAL)
         title = wx.StaticText(self, label="恭喜你，挑战成功！")
         _title_font(title, 6)
-        sizer.Add(title, 0, wx.ALIGN_CENTER | wx.TOP, 70)
+        sizer.Add(title, 0, wx.ALIGN_CENTER | wx.TOP, 60)
 
-        sizer.Add(wx.StaticText(self, label="请选择奖励："), 0, wx.ALIGN_CENTER | wx.TOP, 40)
+        info = self.challenge_info
+        rate = info.get("rate")
+        rate_str = f"{rate:.0%}" if rate is not None else "未知"
+        summary = wx.StaticText(
+            self,
+            label=f"挑战类型：{info.get('label', '')}    正确率：{rate_str}    档位：{self.tier_key}",
+        )
+        sizer.Add(summary, 0, wx.ALIGN_CENTER | wx.TOP, 30)
 
-        self.choice = wx.Choice(self, choices=REWARD_OPTIONS)
-        self.choice.SetMinSize((180, 30))
-        sizer.Add(self.choice, 0, wx.ALIGN_CENTER | wx.TOP, 12)
+        self.result_label = wx.StaticText(self, label="点击下方按钮试试运气吧！")
+        _title_font(self.result_label, 2)
+        sizer.Add(self.result_label, 0, wx.ALIGN_CENTER | wx.TOP, 40)
 
-        btn = wx.Button(self, label="兑 换")
-        btn.SetMinSize((120, 36))
-        btn.Bind(wx.EVT_BUTTON, self.on_exchange)
-        sizer.Add(btn, 0, wx.ALIGN_CENTER | wx.TOP, 30)
+        self.draw_btn = wx.Button(self, label="抽 奖")
+        self.draw_btn.SetMinSize((140, 44))
+        self.draw_btn.Bind(wx.EVT_BUTTON, self.on_draw)
+        sizer.Add(self.draw_btn, 0, wx.ALIGN_CENTER | wx.TOP, 30)
+
+        my_btn = wx.Button(self, label="我的物品")
+        my_btn.Bind(wx.EVT_BUTTON, lambda evt: self.GetParent().show_my_items())
+        sizer.Add(my_btn, 0, wx.ALIGN_CENTER | wx.TOP, 12)
 
         back = wx.Button(self, label="返回首页")
         back.Bind(wx.EVT_BUTTON, lambda evt: self.GetParent().show_start())
-        sizer.Add(back, 0, wx.ALIGN_CENTER | wx.TOP, 15)
+        sizer.Add(back, 0, wx.ALIGN_CENTER | wx.TOP, 12)
 
         self.SetSizer(sizer)
 
-    def on_exchange(self, event):
-        sel = self.choice.GetSelection()
-        if sel == wx.NOT_FOUND:
-            wx.MessageBox("请先选择一个奖励", "提示", wx.ICON_INFORMATION)
+    def on_draw(self, event):
+        if self._drawn:
             return
-        reward = self.choice.GetString(sel)
-        cmd = LAUNCH_COMMANDS.get(self.tier_key, "")
-        # 构建挑战信息摘要
-        info = self.challenge_info
-        label = info.get("label", "")
-        rate = info.get("rate")
-        rate_str = f"{rate:.0%}" if rate is not None else "未知"
-        time_str = _now()
-        summary = (
-            f"挑战类型：{label}\n"
-            f"完成时间：{time_str}\n"
-            f"正确率：{rate_str}\n"
-        )
-        if not cmd:
-            wx.MessageBox(
-                f"兑换成功：「{reward}」\n（「{self.tier_key}」档位的启动指令待配置）\n\n{summary}",
-                "提示", wx.ICON_INFORMATION,
-            )
+        item = draw_luck_item()
+        if item is None:
+            wx.MessageBox("抽奖物品尚未配置", "提示", wx.ICON_INFORMATION)
             return
-        try:
-            subprocess.Popen(cmd, shell=True)
-            wx.MessageBox(
-                f"兑换成功：「{reward}」已启动\n\n{summary}",
-                "提示", wx.ICON_INFORMATION,
+        name, _image, point = item
+        self._drawn = True
+        self.draw_btn.Disable()
+        self.result_label.SetLabel(f"恭喜获得：「{name}」×1（{point} 分）")
+        self.Layout()
+
+
+class UseItemDialog(wx.Dialog):
+    """使用物品对话框：选择消耗数量并实时显示本次消耗的总分值。"""
+
+    def __init__(self, parent, name, count, unit_point):
+        super().__init__(parent, title="使用物品")
+        self.unit_point = unit_point
+        sizer = wx.BoxSizer(wx.VERTICAL)
+
+        info = f"物品：{name}    库存：{count} 个    单价：{unit_point} 分"
+        sizer.Add(wx.StaticText(self, label=info), 0, wx.ALL, 15)
+
+        row = wx.BoxSizer(wx.HORIZONTAL)
+        row.Add(wx.StaticText(self, label="消耗数量："), 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 8)
+        self.spin = wx.SpinCtrl(self, min=1, max=max(count, 1), initial=1)
+        self.spin.Bind(wx.EVT_SPINCTRL, self._on_change)
+        self.spin.Bind(wx.EVT_TEXT, self._on_change)
+        row.Add(self.spin, 0, wx.ALIGN_CENTER_VERTICAL)
+        sizer.Add(row, 0, wx.ALIGN_CENTER | wx.LEFT | wx.RIGHT, 15)
+
+        self.total = wx.StaticText(self, label="")
+        _title_font(self.total, 1)
+        sizer.Add(self.total, 0, wx.ALIGN_CENTER | wx.TOP, 12)
+
+        sizer.Add(self.CreateButtonSizer(wx.OK | wx.CANCEL), 0, wx.ALIGN_CENTER | wx.ALL, 15)
+        self.SetSizerAndFit(sizer)
+        self._update_total()
+
+    def _on_change(self, event):
+        self._update_total()
+        event.Skip()
+
+    def _update_total(self):
+        qty = self.spin.GetValue()
+        self.total.SetLabel(f"本次消耗 {qty} 个，总分值 {qty * self.unit_point} 分")
+
+    def get_quantity(self):
+        return self.spin.GetValue()
+
+
+class MyItemsPanel(wx.Panel):
+    """我的物品页：只展示未消耗物品。
+
+    未消耗物品可合成更高等级物品，也可点击「去使用」按数量消耗并启动命令；
+    已消耗记录通过「消耗历史」按钮进入单独页面查看。
+    """
+
+    def __init__(self, parent):
+        super().__init__(parent)
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        title = wx.StaticText(self, label="我的物品")
+        _title_font(title, 6)
+        sizer.Add(title, 0, wx.ALIGN_CENTER | wx.TOP, 40)
+
+        self.list_panel = wx.ScrolledWindow(self, style=wx.BORDER_SUNKEN)
+        self.list_panel.SetScrollRate(0, 10)
+        inner = wx.BoxSizer(wx.VERTICAL)
+
+        items = fetch_my_items()   # 未消耗物品（count > 0）
+        if not items:
+            inner.Add(
+                wx.StaticText(self.list_panel, label="还没有可用物品，快去答题抽奖吧！"),
+                0, wx.ALL, 20,
             )
-        except OSError as e:
-            wx.MessageBox(f"启动失败：{e}", "错误", wx.ICON_ERROR)
+        for _item_id, name, count in items:
+            inner.Add(self._make_row(name, count), 0, wx.EXPAND | wx.ALL, 6)
+
+        self.list_panel.SetSizer(inner)
+        inner.FitInside(self.list_panel)   # 按内容计算虚拟高度，支持滚动
+        sizer.Add(self.list_panel, 1, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, 30)
+
+        btn_row = wx.BoxSizer(wx.HORIZONTAL)
+        history_btn = wx.Button(self, label="消耗历史")
+        history_btn.Bind(wx.EVT_BUTTON, lambda evt: self.GetParent().show_consume_history())
+        btn_row.Add(history_btn, 0, wx.RIGHT, 12)
+        back = wx.Button(self, label="返回首页")
+        back.Bind(wx.EVT_BUTTON, lambda evt: self.GetParent().show_start())
+        btn_row.Add(back, 0)
+        sizer.Add(btn_row, 0, wx.ALIGN_CENTER | wx.TOP | wx.BOTTOM, 15)
+
+        self.SetSizer(sizer)
+
+    def _make_row(self, name, count):
+        """生成单件未消耗物品行：图标 + 名称数量 + 合成/去使用按钮。"""
+        row = wx.Panel(self.list_panel)
+        row.SetBackgroundColour(wx.Colour(245, 247, 250))
+        s = wx.BoxSizer(wx.HORIZONTAL)
+
+        luck = get_luck_item_by_name(name)
+        point = luck["point"] if luck else 0
+        bmp = _load_item_bitmap(luck["image"]) if luck else None
+        if bmp is not None:
+            s.Add(wx.StaticBitmap(row, bitmap=bmp), 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 8)
+
+        label = f"{name} ×{count}" + (f"（{point} 分）" if point else "")
+        text = wx.StaticText(row, label=label)
+        _title_font(text, 1)
+        s.Add(text, 0, wx.ALIGN_CENTER_VERTICAL | wx.LEFT, 12)
+        s.AddStretchSpacer()
+
+        # 合成按钮（不足时提示还差多少）
+        target = get_merge_target(luck["id"]) if luck else None
+        if target:
+            target_name, need = target
+            if count >= need:
+                btn = wx.Button(row, label=f"合成「{target_name}」")
+                btn.Bind(wx.EVT_BUTTON, lambda evt, n=name: self.on_merge(n))
+                s.Add(btn, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 12)
+            else:
+                tip = wx.StaticText(row, label=f"还差 {need - count} 个可合成「{target_name}」")
+                tip.SetForegroundColour(wx.Colour(150, 90, 20))
+                s.Add(tip, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 12)
+        # 去使用按钮
+        use_btn = wx.Button(row, label="去使用")
+        use_btn.Bind(wx.EVT_BUTTON, lambda evt, n=name, c=count, p=point: self.on_use(n, c, p))
+        s.Add(use_btn, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 12)
+        row.SetSizer(s)
+        return row
+
+    def on_merge(self, name):
+        ok, msg = merge_item(name)
+        wx.MessageBox(msg, "提示", wx.ICON_INFORMATION)
+        if ok:
+            self.GetParent().show_my_items()   # 合成成功，刷新列表
+
+    def on_use(self, name, count, point):
+        """弹出数量选择框，确认后消耗物品并启动「命令 + 总point」。"""
+        dlg = UseItemDialog(self, name, count, point)
+        if dlg.ShowModal() != wx.ID_OK:
+            dlg.Destroy()
+            return
+        quantity = dlg.get_quantity()
+        dlg.Destroy()
+
+        total_point = quantity * point
+        ok, msg = consume_item(name, quantity)
+        if not ok:
+            wx.MessageBox(msg, "提示", wx.ICON_INFORMATION)
+            return
+        if USE_ITEM_COMMAND:
+            try:
+                subprocess.Popen(f"{USE_ITEM_COMMAND} {total_point}", shell=True)
+                extra = f"\n已启动命令：{USE_ITEM_COMMAND} {total_point}"
+            except OSError as e:
+                extra = f"\n启动失败：{e}"
+        else:
+            extra = "\n（启动命令待配置，请在 USE_ITEM_COMMAND 中填写）"
+        wx.MessageBox(f"{msg}，总分值 {total_point} 分{extra}", "提示", wx.ICON_INFORMATION)
+        self.GetParent().show_my_items()   # 刷新列表
+
+
+class ConsumeHistoryPanel(wx.Panel):
+    """消耗历史页：展示已消耗物品的名称、数量、分值与消耗时间。"""
+
+    def __init__(self, parent):
+        super().__init__(parent)
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        title = wx.StaticText(self, label="消耗历史")
+        _title_font(title, 6)
+        sizer.Add(title, 0, wx.ALIGN_CENTER | wx.TOP, 40)
+
+        self.list_panel = wx.ScrolledWindow(self, style=wx.BORDER_SUNKEN)
+        self.list_panel.SetScrollRate(0, 10)
+        inner = wx.BoxSizer(wx.VERTICAL)
+
+        records = fetch_consume_history()
+        if not records:
+            inner.Add(
+                wx.StaticText(self.list_panel, label="暂无消耗记录"),
+                0, wx.ALL, 20,
+            )
+        for _id, name, count, point, consume_time in records:
+            inner.Add(self._make_row(name, count, point, consume_time), 0, wx.EXPAND | wx.ALL, 6)
+
+        self.list_panel.SetSizer(inner)
+        inner.FitInside(self.list_panel)
+        sizer.Add(self.list_panel, 1, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, 30)
+
+        back = wx.Button(self, label="返回我的物品")
+        back.Bind(wx.EVT_BUTTON, lambda evt: self.GetParent().show_my_items())
+        sizer.Add(back, 0, wx.ALIGN_CENTER | wx.TOP | wx.BOTTOM, 15)
+
+        self.SetSizer(sizer)
+
+    def _make_row(self, name, count, point, consume_time):
+        row = wx.Panel(self.list_panel)
+        row.SetBackgroundColour(wx.Colour(238, 238, 238))
+        s = wx.BoxSizer(wx.HORIZONTAL)
+
+        luck = get_luck_item_by_name(name)
+        bmp = _load_item_bitmap(luck["image"]) if luck else None
+        if bmp is not None:
+            s.Add(wx.StaticBitmap(row, bitmap=bmp), 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 8)
+
+        label = f"{name}    ×{count}    {point} 分    {consume_time or ''}"
+        text = wx.StaticText(row, label=label)
+        _title_font(text, 1)
+        s.Add(text, 0, wx.ALIGN_CENTER_VERTICAL | wx.LEFT, 12)
+        s.AddStretchSpacer()
+        row.SetSizer(s)
+        return row
 
 
 # ----------------------------- 主窗口 -----------------------------
@@ -822,15 +1235,24 @@ class MainFrame(wx.Frame):
         self.SetTitle(f"挑战答题 - {label} 结果")
         self._swap(ResultPanel(self, label, records, tier))
 
-    def show_reward(self, tier_key, challenge_info=None):
-        self.SetTitle("挑战答题 - 领取奖励")
-        self._swap(RewardPanel(self, tier_key, challenge_info))
+    def show_lottery(self, tier_key, challenge_info=None):
+        self.SetTitle("挑战答题 - 抽奖")
+        self._swap(LotteryPanel(self, tier_key, challenge_info))
+
+    def show_my_items(self):
+        self.SetTitle("挑战答题 - 我的物品")
+        self._swap(MyItemsPanel(self))
+
+    def show_consume_history(self):
+        self.SetTitle("挑战答题 - 消耗历史")
+        self._swap(ConsumeHistoryPanel(self))
 
 
 def main():
     db_is_new = not os.path.exists(DB_PATH)
     init_db()
     ensure_answer_count_column()
+    init_lottery_tables()
     # 仅在新建数据库时从 mitchell 文件夹导入题目
     if db_is_new:
         mitchell_dir = os.path.join(BASE_DIR, "mitchell")
